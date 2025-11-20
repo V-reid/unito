@@ -1,7 +1,6 @@
-import React from 'react'
+import React from "react";
+import ComingSoon from "~/components/ComingSoon";
 
 export default function DiFormazione() {
-  return (
-    <div>DiFormazione</div>
-  )
+	return <ComingSoon />;
 }

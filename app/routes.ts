@@ -2,6 +2,7 @@ import {
 	type RouteConfig,
 	index,
 	layout,
+	prefix,
 	route,
 } from "@react-router/dev/routes";
 
@@ -35,5 +36,7 @@ export default [
 		),
 		//contatti
 		route("contatti", "./routes/Contacts.tsx"),
+		...prefix("notizie", [route(":id", "./routes/news.tsx")]),
+		...prefix("professore", [route(":id", "./routes/professor.tsx")]),
 	]),
 ] satisfies RouteConfig;

@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { Button } from "~/ui/button";
 import type PublicEngagement from "~/routes/PublicEngagement";
 import { menuContent, type MenuLink, type LinkType } from "~/lib/constant";
+import Logo from "./Logo";
 
 interface HeaderLinkType {
 	label: string;
@@ -51,16 +52,7 @@ export default function Header() {
 		<header className="bg-white border-b border-slate-200 sticky top-0 z-50">
 			<div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
 				<div className="flex items-center gap-8">
-					<Link to="/">
-						<h1 className="text-4xl ">
-							di<span className="text-primary">.uni</span>to
-							<span className="text-primary">.it</span>
-						</h1>
-
-						<h2 className="-mt-[5px]">
-							Dipartimento di Informatica
-						</h2>
-					</Link>
+					<Logo/>
 					<nav className="hidden md:flex items-center gap-6">
 						{Object.entries(menuContent).map((x) => (
 							<>

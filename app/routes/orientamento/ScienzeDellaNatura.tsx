@@ -1,7 +1,8 @@
 import React from 'react'
+import ComingSoon from '~/components/ComingSoon'
 
 export default function ScienzeDellaNatura() {
   return (
-    <div>ScienzeDellaNatura</div>
+    <ComingSoon />
   )
 }

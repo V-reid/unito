@@ -2,6 +2,7 @@ import React from "react";
 import { Outlet, useLocation } from "react-router";
 import Header from "~/components/Header";
 import { motion } from "motion/react";
+import Footer from "~/components/Footer";
 export default function MainLayout() {
 	const location = useLocation();
 	return (
@@ -16,7 +17,7 @@ export default function MainLayout() {
 					<Outlet />
 				</motion.div>
 			</main>
-			<header>Footer</header>
+			<Footer />
 		</div>
 	);
 }
