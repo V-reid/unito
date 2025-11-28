@@ -31,9 +31,20 @@ export default [
 			"./routes/orientamento/ScienzeDellaNatura.tsx"
 		),
 		route(
-			"orientamento-CatalogoIniziative",
+			"orientamento-catalogoIniziative",
 			"./routes/orientamento/CatalogoIniziative.tsx"
 		),
+		route(
+			"orientamento-materialeCommissione",
+			"./routes/orientamento/MaterialeCommissione.tsx"
+		),
+
+		//Materiale Didattico
+		route("didattica-perLeScuole", "./routes/didattica/PerLeScuole.tsx"),
+		route("didattica-progetti", "./routes/didattica/Progetti.tsx"),
+		route("didattica-ricerca", "./routes/didattica/ProdottiRicerca.tsx"),
+		route("didattica-attivita", "./routes/didattica/Attivita.tsx"),
+
 		//contatti
 		route("contatti", "./routes/Contacts.tsx"),
 		...prefix("notizie", [route(":id", "./routes/news.tsx")]),

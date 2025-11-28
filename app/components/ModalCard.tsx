@@ -5,38 +5,36 @@ import { ImageWithFallback } from "./ImageWithFallback";
 import type { ModalType } from "./Modal";
 import Modal from "./Modal";
 import { cn } from "~/utils";
-import { useSearchParams } from "react-router";
+import { useNavigate, useSearchParams } from "react-router";
+import { DialogDemo } from "./Dialog2";
 
 export default function ModalCard({
+	setObj,
+	onClick,
 	...rest
-}: Omit<ModalType, "open" | "setIsOpen">) {
-	const [searchParams, setSearchParams] = useSearchParams();
-	const defaultOpen = searchParams.get("modal") == rest.title;
-	const [open, setIsOpen] = useState(defaultOpen ?? false);
+}: Omit<ModalType, "open" | "setIsOpen"> & {
+	setObj: React.Dispatch<
+		React.SetStateAction<Omit<ModalType, "open" | "setIsOpen"> | undefined>
+	>;
+	onClick: () => void;
+}) {
+	// const [searchParams, setSearchParams] = useSearchParams();
+	// const defaultOpen = searchParams.get("modal") == rest.title;
 	const [isHovered, setIsHovered] = useState(false);
+	const navigate = useNavigate();
 
-	useEffect(() => {
-		if (open) {
-			const newParams = new URLSearchParams(searchParams);
-			newParams.set("modal", rest.title as string);
-			setSearchParams(newParams);
-		} else {
-			const newParams = new URLSearchParams(searchParams);
-			newParams.delete("modal");
-			setSearchParams(newParams);
-		}
-	}, [open]);
+	
 
 	return (
 		<div
 			className="relative rounded-xl overflow-hidden cursor-pointer group h-80 shadow-2xl border-2 border-gray-500"
 			onClick={() => {
-				setIsHovered(false);
-				setIsOpen(true);
+				// setIsHovered(false);
+				onClick();
 
-				const newParams = new URLSearchParams(searchParams);
-				newParams.set("modal", rest.title as string);
-				setSearchParams(newParams);
+				// const newParams = new URLSearchParams(searchParams);
+				// newParams.set("modal", rest.title as string);
+				// setSearchParams(newParams);
 			}}
 			onMouseEnter={() => setIsHovered(true)}
 			onMouseLeave={() => setIsHovered(false)}
@@ -73,8 +71,8 @@ export default function ModalCard({
 					</motion.div>
 				</div>
 			</div>
-
-			<Modal {...rest} {...{ open }} setIsOpen={setIsOpen} />
+			{/* <DialogDemo title="gino" open={open} setIsOpen={setIsOpen} /> */}
+			{/* <Modal {...rest} {...{ open }} setIsOpen={setIsOpen} /> */}
 		</div>
 	);
 }

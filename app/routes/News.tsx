@@ -1,8 +1,6 @@
-import React from "react";
 import { useNavigate, useParams } from "react-router";
 import { news } from "~/lib/constant";
 import { ArrowLeft } from "lucide-react";
-import { Button } from "~/ui/button";
 
 export default function News() {
 	const { id } = useParams();

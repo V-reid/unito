@@ -30,9 +30,9 @@ export default function Example() {
 	return (
 		<div className="relative isolate bg-gray-900">
 			<div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
-				<div className="relative px-6 pb-20 pt-24 sm:pt-32 lg:static lg:px-8 lg:py-48">
+				<div className="relative px-6 pb-0 pt-12  lg:static lg:px-8 lg:pt-24">
 					<div className="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
-						<div className="absolute inset-y-0 left-0 -z-10 w-full overflow-hidden  ring-1  lg:w-1/2 bg-gray-900 ring-white/10">
+						<div className="absolute inset-y-0 left-0 -z-10 w-full overflow-hidden rounded-br-xl ring-1  lg:w-1/2 bg-gray-50 ring-white/10">
 							{/* <svg
 								aria-hidden="true"
 								className="absolute inset-0 size-full stroke-gray-200 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)] dark:stroke-white/10"
@@ -88,17 +88,17 @@ export default function Example() {
 								/>
 							</div> */}
 						</div>
-						<h2 className="text-pretty text-4xl font-semibold tracking-tight  sm:text-5xl text-white">
+						<h2 className="text-pretty text-4xl font-semibold tracking-tight  sm:text-5xl text-slate-900">
 							Contatta il Dipartimento di Informatica
 						</h2>
-						<p className="mt-6 text-lg/8  text-gray-400">
+						<p className="mt-6 text-lg/8  text-slate-600">
 							Che tu sia un futuro studente, un'azienda o un
 							ricercatore, siamo qui per rispondere alle tue
 							domande su ammissioni, progetti di ricerca e
 							partnership. Ti invitiamo a compilare il modulo per
 							la richiesta di informazioni.
 						</p>
-						<dl className="mt-10 space-y-4 text-base/7 text-gray-300">
+						<dl className="mt-10 space-y-4 text-base/7 text-slate-700">
 							{info.map((x) => (
 								<a
 									className="flex gap-x-4 underline"
@@ -110,7 +110,7 @@ export default function Example() {
 										</span>
 										<x.icon
 											aria-hidden="true"
-											className="h-7 w-6 text-gray-400"
+											className="h-7 w-6 text-slate-500"
 										/>
 									</dt>
 									<dd>{x.value}</dd>
@@ -122,7 +122,7 @@ export default function Example() {
 				<form
 					action="#"
 					method="POST"
-					className="px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48"
+					className="px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-32"
 				>
 					<div className="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
 						<div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">

@@ -40,13 +40,8 @@ export default function Modal({
 	const [searchParams, setSearchParams] = useSearchParams();
 	return (
 		// <div className="min-h-screen flex items-center justify-center bg-slate-200 p-4">
-		<Dialog
-			open={open}
-			onOpenChange={(change: boolean) => {
-				setIsOpen(change);
-			}}
-		>
-			<DialogContent className={cn("max-w-2xl bg-slate-100")}>
+		<Dialog open={open} onOpenChange={setIsOpen}>
+			<DialogContent className={cn("max-w-6xl bg-slate-100")}>
 				<DialogHeader>
 					<div className="flex justify-between items-center">
 						<DialogTitle>{title}</DialogTitle>
@@ -64,24 +59,25 @@ export default function Modal({
 						/>
 					</div>
 
-					<p className="text-slate-600">{content}</p>
+					<div className="text-slate-600">{content}</div>
 				</div>
 
 				{linkHref ? (
 					<DialogFooter className="flex-col sm:flex-row gap-2">
-						<DialogClose asChild>
+						{/* <DialogClose asChild className="cursor-pointer">
 							<Button variant="outline">Cancel</Button>
-						</DialogClose>
-						<Button
-							onClick={() =>
-								window.location.replace(linkHref as string)
-							}
-							variant="default"
-							className="w-full sm:w-auto bg-primary text-white"
+						</DialogClose> */}
+						<a
+							href={linkHref}
+							// onClick={() =>
+							// 	window.location.(linkHref as string)
+							// }
+
+							className="flex gap-2 py-1 hover:brightness-110 active:scale-95 px-2 rounded-lg items-center w-full sm:w-auto bg-primary text-white"
 						>
 							{linkText ?? "Scopri di più"}
-							<ExternalLink className="ml-2 h-4 w-4" />
-						</Button>
+							<ExternalLink className=" h-4 w-4" />
+						</a>
 					</DialogFooter>
 				) : null}
 			</DialogContent>

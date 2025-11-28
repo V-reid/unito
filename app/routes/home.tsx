@@ -64,11 +64,14 @@ function Person({
 					/>
 				</Link>
 			</TooltipTrigger>
-			<TooltipContent className="bg-white flex flex-col items-center mb-5 border-b-2 border-primary">
+			<TooltipContent
+				side="bottom"
+				className="bg-white flex flex-col items-center mb-5 border-b-2 border-primary"
+			>
 				<div className="text-lg capitalize">{x.name}</div>
 				<div className="text-md capitalize">{x.title}</div>
 			</TooltipContent>
-			<TooltipContent
+			{/* <TooltipContent
 				sideOffset={-200}
 				className="-bottom-full  bg-white flex flex-col gap-1 text-sm items-start mb-5 border-l-2 border-primary"
 			>
@@ -80,7 +83,7 @@ function Person({
 					<Phone className="size-4 " />
 					<div>0116706756</div>
 				</div>
-			</TooltipContent>
+			</TooltipContent> */}
 		</Tooltip>
 	);
 }

@@ -16,3 +16,7 @@
   --color-primary-900: var(--color-purple-900);
   --color-primary-950: var(--color-purple-950);
 }
+
+button,a {
+  cursor: pointer;
+}

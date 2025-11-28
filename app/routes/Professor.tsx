@@ -6,7 +6,7 @@ import { ArrowLeft, Mail, Phone } from "lucide-react";
 export default function Professor() {
 	const { id } = useParams();
 	const professor = professors.find((x) => x.id == id);
-	const { img, name, title } = professor;
+	const { img, name, title, mail, tel } = professor;
 	const navigate = useNavigate();
 
 	if (!professor) return <>Not Found</>;
@@ -26,19 +26,25 @@ export default function Professor() {
 						/>
 					</div>
 					<div className="flex flex-col gap-5">
-						<div className="border-primary text-md w-fit  border-l-2 px-2 font-bold h-fit">
+						<div className="border-primary text-md w-fit  border-l-2 px-2  h-fit">
 							{title}
 							<h2 className="text-xl font-bold">{name}</h2>
 						</div>
 						<div>
-							<div className="flex gap-2 items-center">
+							<a
+								className="flex gap-2 items-center underline text-blue-500"
+								href={`mailto:${mail}`}
+							>
 								<Mail className="size-4" />
-								<div>matteo.baldoni@unito.it</div>
-							</div>
-							<div className="flex gap-2 items-center">
+								<div>{mail}</div>
+							</a>
+							<a
+								className="flex gap-2 items-center underline text-blue-500"
+								href={`tel:${tel}`}
+							>
 								<Phone className="size-4 " />
-								<div>0116706756</div>
-							</div>
+								<div>{tel}</div>
+							</a>
 						</div>
 					</div>
 				</div>

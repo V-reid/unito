@@ -5,7 +5,6 @@ import SearchBar from "./SerachBar";
 import { ChevronDown, User } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { Button } from "~/ui/button";
-import type PublicEngagement from "~/routes/PublicEngagement";
 import { menuContent, type MenuLink, type LinkType } from "~/lib/constant";
 import Logo from "./Logo";
 
@@ -52,7 +51,7 @@ export default function Header() {
 		<header className="bg-white border-b border-slate-200 sticky top-0 z-50">
 			<div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
 				<div className="flex items-center gap-8">
-					<Logo/>
+					<Logo />
 					<nav className="hidden md:flex items-center gap-6">
 						{Object.entries(menuContent).map((x) => (
 							<>
@@ -86,7 +85,7 @@ export default function Header() {
 						animate={{ height: "auto", opacity: 1 }}
 						exit={{ height: 0, opacity: 0 }}
 						transition={{ duration: 0.3 }}
-						className="overflow-hidden border-t border-slate-200 bg-white"
+						className="overflow-hidden border-t border-slate-200 bg-white "
 					>
 						<div className="max-w-7xl mx-auto px-4 py-8 flex gap-4 items-center">
 							<div>
@@ -165,8 +164,7 @@ function HeaderLinkWithMenu({
 }: HeaderLinkType & { onClick: () => void; isActive: boolean }) {
 	const [hover, setHover] = useState(false);
 	const location = useLocation();
-	console.log(location.pathname.split("-")[0]);
-	console.log(to);
+
 	return (
 		<button
 			onClick={onClick}

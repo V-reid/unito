@@ -12,41 +12,6 @@ export type MenuLink = {
 	items: LinkType[];
 };
 
-export const professors = [
-	{
-		id: "p001",
-		name: "gino Pagliaccio",
-		title: "Math professor",
-		img: "/people1.png",
-		mail: "amon.rapp@unito.it",
-		tel: "011.6706827",
-	},
-	{
-		id: "p002",
-		name: "Mario Rossi",
-		title: "Meth professor",
-		img: "/people2.avif",
-		mail: "amon.rapp@unito.it",
-		tel: "011.6706827",
-	},
-	{
-		id: "p003",
-		name: "Alberta Casalinghi",
-		title: "Computer science professor",
-		img: "/people3.avif",
-		mail: "amon.rapp@unito.it",
-		tel: "011.6706827",
-	},
-	{
-		id: "p004",
-		name: "Francesca Del cedro",
-		title: "English professor",
-		img: "/people4.avif",
-		mail: "amon.rapp@unito.it",
-		tel: "011.6706827",
-	},
-];
-
 export const menuContent: {
 	[k: string]: LinkType | MenuLink;
 } = {
@@ -81,59 +46,62 @@ export const menuContent: {
 	},
 	orientation: {
 		title: "Orientamento",
-		description: "",
 		to: "/orientamento",
 		items: [
 			{
 				title: "Laurea Triennale in Informatica",
 				to: "/orientamento-laureaTriennale",
-				description: "Track your business metrics",
+				description:
+					"Sezione dedicata alle future matricole della triennale",
 			},
 			{
 				title: "Laurea Magistrale in Informatica",
 				to: "/orientamento-laureaMagistrale",
-				description: "Manage customer relationships",
+				description:
+					"Sezione dedicata alle future matricole della magistrale",
 			},
 			{
-				title: "Orientamento Scienze della Natura",
+				title: "Scuola di Scienze della Natura",
 				to: "/orientamento-scienzeDellaNatura",
-				description: "Automate your campaigns",
+				description:
+					"Sezione dedicata ai futuri studenti della Scuola di Scienze della Natura",
 			},
 			{
 				title: "Catalogo Iniziative",
-				to: "/orientamento-CatalogoIniziative",
-				description: "Sell online with ease",
+				to: "/orientamento-catalogoIniziative",
+				description: "Presentazione delle iniziative di orientamento",
 			},
 			{
 				title: "Materiale Commissione Orientamento",
-				to: "/orientamento-MaterialeCommissione",
-				description: "Sell online with ease",
+				to: "/orientamento-materialeCommissione",
+				description:
+					"Documenti, linee guida e strumenti per facilitare l'orientamento",
 			},
 		],
 	},
 	material: {
 		title: "Materiale Didattico",
-		description: "",
+		to: "/didattica",
 		items: [
 			{
-				title: "Per le scuole",
-				to: "",
-				description: "Guides and tutorials",
+				title: "Per le Scuole",
+				to: "/didattica-perLeScuole",
+				description: "Iniziative per le scuole primarie e secondarie",
 			},
 			{
 				title: "Progetti",
-				to: "",
-				description: "Latest news and insights",
+				to: "/didattica-progetti",
+				description: "Progetti del gruppo di ricerca",
 			},
 			{
 				title: "Prodotti della Ricerca",
-				to: "",
-				description: "Join our community",
+				to: "/didattica-ricerca",
+				description: "Pubblicazioni dei ricercatori",
 			},
 			{
 				title: "Attività",
-				to: "",
-				description: "Get help from our team",
+				to: "/didattica-attivita",
+				description: "Proposte educative create dal gruppo di ricerca",
 			},
 		],
 	},
@@ -215,5 +183,81 @@ export const news = [
 		tags: ["Erasmus", "Cybersecurity", "Bando", "Internazionale"],
 		full_article_content:
 			"È aperto il bando per 5 borse di mobilità ERASMUS+ che permetteranno agli studenti della Laurea Magistrale in Informatica di trascorrere un semestre presso l'Università di Helsinki, specializzandosi in tematiche avanzate di Cybersecurity e Sicurezza dei Dati. La partnership mira a rafforzare la collaborazione internazionale e offrire ai nostri studenti un'esperienza formativa unica in un contesto accademico di alto livello. I requisiti e le modalità di candidatura sono disponibili sul portale studenti.",
+	},
+];
+
+export type ProfType = {
+	id: string;
+	name: string;
+	title: string;
+	img?: string;
+	mail?: string;
+	tel?: string;
+};
+
+export const professors: ProfType[] = [
+	{
+		id: "p001",
+		name: "Sara Capecchi",
+		title: "Dott.ssa",
+		img: "/professor/capecchi.jpeg",
+		mail: "sara.capecchi@unito.it ",
+		tel: "0116706747",
+	},
+	{
+		id: "p002",
+		name: "Cristina Gena",
+		title: "Prof.ssa",
+		img: "/professor/gena.jpeg",
+		mail: "cgena@di.unito.it",
+		tel: "0116706827",
+	},
+	{
+		id: "p003",
+		name: "Elisabetta Barberis",
+		title: "Prof.ssa, Prorettore",
+		img: "/professor/barberis.jpeg",
+		mail: "elisabetta.barberis@unito.it",
+		tel: "0116702201",
+	},
+	{
+		id: "p004",
+		name: "Liliana Ardissono",
+		title: "Prof.ssa",
+		img: "/professor/ardissono.jpeg",
+		mail: "liliana.ardissono@unito.it",
+		tel: "0116706716",
+	},
+	{
+		id: "p005",
+		name: "Barbara Demo",
+		title: "Prof.ssa",
+		img: "/professor/demo.jpeg",
+		mail: "barbara@di.unito.it",
+		tel: "0116706754",
+	},
+	{
+		id: "p006",
+		name: "Cristina Bosco",
+		title: "Dott.ssa",
+		img: "/professor/bosco.jpeg",
+		mail: "cristina.bosco@unito.it",
+		tel: "0116706845",
+	},
+	{
+		id: "p007",
+		name: "Matteo Baldoni",
+		title: "Prof",
+		img: "/professor/baldoni.jpeg",
+		mail: "matteo.baldoni@unito.it",
+		tel: "0116706756",
+	},
+	{
+		id: "p008",
+		name: "Ruggero Pensa",
+		title: "Prof",
+		img: "/professor/pensa.jpeg",
+		mail: "ruggero.pensa@unito.it",
+		tel: "0116706798",
 	},
 ];
