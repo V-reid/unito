@@ -24,6 +24,7 @@ import {
 	ChevronRight,
 	ExternalLink,
 	MoreHorizontal,
+	Search,
 } from "lucide-react";
 
 import { Button } from "~/ui//button";
@@ -467,7 +468,6 @@ export default function ProdottiRicerca() {
 		{ id: "year", desc: true },
 	]);
 
-	const [filter, setFilter] = useState("");
 	const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
 	const [globalFilter, setGlobalFilter] = useState("");
 
@@ -481,7 +481,7 @@ export default function ProdottiRicerca() {
 				},
 			}) => (
 				<a
-					className="w-[200px] text-wrap underline font-bold text-blue-500"
+					className="w-[200px] text-wrap underline font-bold text-blue-600"
 					href={href}
 				>
 					{title}
@@ -525,7 +525,14 @@ export default function ProdottiRicerca() {
 				},
 			}) => (
 				<div className="w-[170px]">
-					<Tag>{tag}</Tag>
+					<div
+						className={cn(
+							"text-xs shadow-sm cursor-pointer ",
+							"rounded-full w-fit bg-primary-100  text-primary-700 border-[1px] border-primary-600  px-2 py-0.5 text-xs font-bold grid"
+						)}
+					>
+						{tag}
+					</div>
 				</div>
 			),
 			enableSorting: true,
@@ -566,16 +573,30 @@ export default function ProdottiRicerca() {
 	return (
 		<div className="w-full max-w-6xl mx-auto py-10">
 			<PageIntro title="Prodotti della Ricerca"></PageIntro>
-			<div className="flex items-center py-4 gap-4">
-				<Input
-					placeholder="Ricerca per titolo, collaboratore o anno"
-					onChange={(event) => {
-						table.setGlobalFilter(event.target.value);
-					}}
-					className="max-w-sm"
-				/>
-				<div>
-					<div className="text-sm font-semibold pb-2">
+			<div className="flex flex-col items-start py-4 gap-4">
+				<div className="flex gap-3 items-center">
+					<label
+						htmlFor="table_search"
+						className="text-sm font-semibold "
+					>
+						Ricerca testo:
+					</label>
+					<div className="relative  flex items-center min-w-lg ">
+						<Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
+						<Input
+							id="table_search"
+							type="text"
+							className="pl-10 bg-white rounded-xl "
+							placeholder="Ricerca per titolo, collaboratore o anno"
+							onChange={(event) => {
+								table.setGlobalFilter(event.target.value);
+							}}
+						/>
+					</div>
+				</div>
+
+				<div className="flex gap-3">
+					<div className="text-sm font-semibold ">
 						Ricerca per categoria:
 					</div>
 					<div className="flex gap-2">
@@ -587,11 +608,23 @@ export default function ProdottiRicerca() {
 							"Altri Progetti",
 						].map((x) => (
 							<div
+								role="button"
+								tabIndex={0}
+								onKeyDown={(v) => {
+									if (v.key == " " || v.key == "Enter") {
+										v.preventDefault();
+										table
+											.getColumn("tag")
+											?.setFilterValue(
+												table
+													.getColumn("tag")
+													?.getFilterValue() == x
+													? undefined
+													: (x as TagType)
+											);
+									}
+								}}
 								onClick={() => {
-									// setTag(
-									// 	tag == x ? undefined : (x as TagType)
-									// );
-
 									table
 										.getColumn("tag")
 										?.setFilterValue(
@@ -603,9 +636,11 @@ export default function ProdottiRicerca() {
 										);
 								}}
 							>
-								<Tag
+								<div
 									className={cn(
-										"text-xs shadow-sm cursor-pointer",
+										"text-xs shadow-sm cursor-pointer active:scale-95 hover:brightness-110 ",
+										"rounded-full w-fit bg-primary-100  text-primary-700 border-[1px] border-primary-600  px-2 py-0.5 text-xs font-bold grid",
+
 										table
 											.getColumn("tag")
 											?.getFilterValue() &&
@@ -613,43 +648,16 @@ export default function ProdottiRicerca() {
 												table
 													.getColumn("tag")
 													?.getFilterValue()
-											? "bg-primary-400"
+											? "opacity-50 "
 											: ""
 									)}
 								>
 									{x}
-								</Tag>
+								</div>
 							</div>
 						))}
 					</div>
 				</div>
-
-				{/* <DropdownMenu>
-					<DropdownMenuTrigger asChild>
-						<Button variant="outline" className="ml-auto">
-							Colonne <ChevronDown />
-						</Button>
-					</DropdownMenuTrigger>
-					<DropdownMenuContent align="end">
-						{table
-							.getAllColumns()
-							.filter((column) => column.getCanHide())
-							.map((column) => {
-								return (
-									<DropdownMenuCheckboxItem
-										key={column.id}
-										className="capitalize"
-										checked={column.getIsVisible()}
-										onCheckedChange={(value) =>
-											column.toggleVisibility(!!value)
-										}
-									>
-										{column.id}
-									</DropdownMenuCheckboxItem>
-								);
-							})}
-					</DropdownMenuContent>
-				</DropdownMenu> */}
 			</div>
 			<div className="overflow-hidden rounded-md border">
 				<Table className="bg-slate-50">
@@ -658,7 +666,10 @@ export default function ProdottiRicerca() {
 							<TableRow key={headerGroup.id}>
 								{headerGroup.headers.map((header) => {
 									return (
-										<TableHead key={header.id}>
+										<TableHead
+											key={header.id}
+											className="bg-gray-200"
+										>
 											{header.isPlaceholder
 												? null
 												: flexRender(
@@ -726,7 +737,14 @@ export default function ProdottiRicerca() {
 			</div>
 			<div className="flex items-center justify-end space-x-2 py-4">
 				<div className="space-x-2">
+					<label
+						htmlFor="prev_button_table"
+						className="sr-only opacity-0"
+					>
+						Precedente
+					</label>
 					<Button
+						id="prev_button_table"
 						variant="outline"
 						size="sm"
 						onClick={() => table.previousPage()}
@@ -734,7 +752,14 @@ export default function ProdottiRicerca() {
 					>
 						<ChevronLeft />
 					</Button>
+					<label
+						htmlFor="next_button_table"
+						className="sr-only opacity-0"
+					>
+						Prossimo
+					</label>
 					<Button
+						id="next_button_table"
 						variant="outline"
 						size="sm"
 						onClick={() => table.nextPage()}

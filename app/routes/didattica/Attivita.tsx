@@ -52,7 +52,7 @@ const items = {
 			},
 			{
 				title: "Teachers4Teachers",
-				img: "./teacher4teacher.jpg",
+				img: "./uni.png",
 				alt: "Teacher4Teacher",
 				description: (
 					<div>
@@ -156,6 +156,7 @@ const items = {
 						/>
 					</div>
 				),
+				imgClassName: "object-top h-[350px]",
 				alt: "ragazza che segue un corso al pc",
 				content:
 					"Il progetto si concentra sulla definizione di una metodologia di insegnamento efficace ed efficiente grazie all’implementazione di una piattaforma educativa online che possa aiutare gli studenti a sviluppare competenze nell’ambito dell’IA e grazie ad una serie di attività ludiche e d'intrattenimento.",
@@ -213,13 +214,15 @@ export default function Attivita() {
 	return (
 		<div className="p-10 relative flex flex-col gap-10 max-w-4xl mx-auto pt-20">
 			<PageIntro title="Attività">
-				Come parte delle loro ricerche, i nostri ricercatori e
-				ricercatrici hanno ideato delle attività didattiche rivolte a
-				studenti e insegnanti delle scuole primarie e secondarie. In
-				questa sezione si possono trovare le informazioni e i materiali
-				necessari per intraprendere queste attività, divise per
-				categorie, in modo da approfondire e migliorare l’insegnamento
-				dell’informatica.
+				<div className="font-[Helvetica]">
+					Come parte delle loro ricerche, i nostri ricercatori e
+					ricercatrici hanno ideato delle attività didattiche rivolte
+					a studenti e insegnanti delle scuole primarie e secondarie.
+					In questa sezione si possono trovare le informazioni e i
+					materiali necessari per intraprendere queste attività,
+					divise per categorie, in modo da approfondire e migliorare
+					l’insegnamento dell’informatica.
+				</div>
 			</PageIntro>
 			{Object.values(items).map((x) => (
 				<div className="py-2">
@@ -233,15 +236,8 @@ export default function Attivita() {
 										setObj(x);
 										setIsOpen(true);
 									}}
-									{...{
-										title: x.title,
-										content: x.content,
-										description: x.description,
-										linkText: x.linkText,
-										img: x.img,
-										linkHref: x.linkHref,
-										setObj,
-									}}
+									setObj={setObj}
+									{...x}
 								/>
 							</div>
 						))}

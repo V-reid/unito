@@ -24,6 +24,7 @@ export type ModalType = {
 	linkText?: string;
 	linkHref?: string;
 	alt?: string;
+	imgClassName?: string;
 };
 
 export default function Modal({
@@ -36,12 +37,13 @@ export default function Modal({
 	content,
 	linkText,
 	linkHref,
+	imgClassName,
 }: ModalType) {
 	const [searchParams, setSearchParams] = useSearchParams();
 	return (
 		// <div className="min-h-screen flex items-center justify-center bg-slate-200 p-4">
 		<Dialog open={open} onOpenChange={setIsOpen}>
-			<DialogContent className={cn("max-w-6xl bg-slate-100")}>
+			<DialogContent className={cn("max-w-6xl bg-slate-100 ")}>
 				<DialogHeader>
 					<div className="flex justify-between items-center">
 						<DialogTitle>{title}</DialogTitle>
@@ -50,16 +52,19 @@ export default function Modal({
 					<DialogDescription>{description}</DialogDescription>
 				</DialogHeader>
 
-				<div className="space-y-4">
+				<div className="space-y-4 ">
 					<div className="rounded-lg overflow-hidden">
 						<ImageWithFallback
 							src={img}
 							alt={alt}
-							className="w-full h-64 object-cover"
+							className={cn(
+								"w-full h-64 object-cover flex-1",
+								imgClassName ?? ""
+							)}
 						/>
 					</div>
 
-					<div className="text-slate-600">{content}</div>
+					<div className="text-slate-600 flex-2">{content}</div>
 				</div>
 
 				{linkHref ? (

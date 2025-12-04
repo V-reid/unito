@@ -38,6 +38,7 @@ const items: {
 						/>
 					</div>
 				),
+				imgClassName: "h-[400px] object-top",
 				content: (
 					<div>
 						Lo scopo della collaborazione è di realizzare dei
@@ -78,6 +79,7 @@ const items: {
 					</div>
 				),
 				alt: "immagine del robot Pepper",
+				imgClassName: "object-top",
 				content: (
 					<div>
 						Sperimentazione che si è svolta da gennaio ad aprile
@@ -122,6 +124,7 @@ const items: {
 						/>
 					</div>
 				),
+				imgClassName: "object-top",
 				alt: "immagine del robot Neo",
 				content:
 					"Accordo attuativo per collaborazione scientifica tra l’Università degli Studi di Torino (Dipartimento di Informatica) e Intesa Sanpaolo Innovation Center S.p.A. Relativo all’utilizzo della terapia robotica (con i robot NAO e Pepper) per l’autismo, mirato a progettare e testare gli scambi e le interazioni del bambino con autismo in contesti riabilitativi (lavoro sul linguaggio/comunicazione, sulle emozioni, social skills training ecc..).",
@@ -179,7 +182,8 @@ const items: {
 					</div>
 				),
 				alt: "dati che passano da un pc al un cervello stilizzato",
-				content: "",
+				content:
+					"Per l’attuazione del progetto “Pensiero Computazionale e Creatività Digitale” piano nazionale scuola digitale, il Dipartimento di Informatica dell’Università degli Studi di Torino ha stretto una convenzione con l’istituzione scolastica “Scuola Primaria Michele Coppino”, con sede a Torino. Il progetto si è sviluppato attraverso diversi cicli di lezioni di coding presso il plesso Falletti (scuola primaria) del Circolo Coppino dal maggio 2017 al maggio 2019.",
 			},
 			{
 				title: "Passport.Unito",
@@ -226,6 +230,7 @@ const items: {
 					</div>
 				),
 				alt: "logo della banca d'Italia ",
+				imgClassName: "h-[350px]",
 				content: (
 					<div>
 						Progettazione di una{" "}
@@ -293,24 +298,19 @@ export default function Progetti() {
 					<Title>{x.title}</Title>
 					<div className="grid grid-cols-2 gap-5 place-items-center w-fit  ">
 						{x.items.map((x) => (
-							<div className="h-80 aspect-square">
-								<ModalCard
-									key={x.title.toString()}
-									onClick={() => {
-										setObj(x);
-										setIsOpen(true);
-									}}
-									{...{
-										title: x.title,
-										content: x.content,
-										description: x.description,
-										linkText: x.linkText,
-										img: x.img,
-										linkHref: x.linkHref,
-										setObj: setObj,
-									}}
-								/>
-							</div>
+							<>
+								<div className="h-80 aspect-square ">
+									<ModalCard
+										key={x.title.toString()}
+										onClick={() => {
+											setObj(x);
+											setIsOpen(true);
+										}}
+										setObj={setObj}
+										{...x}
+									/>
+								</div>
+							</>
 						))}
 					</div>
 				</div>

@@ -6,8 +6,12 @@ export default function SearchBar() {
 	const [searchQuery, setSearchQuery] = useState("");
 	return (
 		<div className="relative   flex items-center">
+			<label htmlFor="global_search" className="sr-only opacity-0">
+				barra di ricerca
+			</label>
 			<Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
 			<Input
+				id="global_search"
 				type="text"
 				placeholder="Cerca..."
 				value={searchQuery}

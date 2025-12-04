@@ -31,7 +31,7 @@ export default function PerLeScuole() {
 
 			<Section
 				title="Bambini e bambine all’Università"
-				src="./perScuole/bambini.jpeg"
+				src="/perScuole/bambini.jpeg"
 			>
 				<>
 					<div className="pb-3">
@@ -52,15 +52,15 @@ export default function PerLeScuole() {
 						accessibilità all'alta formazione in condizioni di pari
 						opportunità. <br />
 						Il Dipartimento di Informatica ha ospitato gruppi di
-						bambini delle scuole elementari e ha offerto attività da
-						Programma il Futuro.
+						bambini delle scuole elementari e ha offerto attività da{" "}
+						<ExternalA href="">Programma il Futuro</ExternalA>.
 					</p>
 				</>
 			</Section>
 
 			<Section
 				title="Progetto Lauree Scientifiche. Laboratori e attività"
-				src="./perScuole/lauree.jpeg"
+				src="/perScuole/lauree.jpeg"
 				classNameImg="object-top"
 			>
 				<>
@@ -107,7 +107,7 @@ export default function PerLeScuole() {
 			<Section
 				title="Laboratori e incontri per la Scuola Secondaria di Secondo
 					Grado"
-				src="./perScuole/laboratori.jpeg"
+				src="/perScuole/laboratori.jpeg"
 			>
 				<ul className="list-disc pl-10 ">
 					<li>
@@ -125,7 +125,7 @@ export default function PerLeScuole() {
 
 			<Section
 				title="Alternanza Scuola-Lavoro"
-				src="./perScuole/alternanza.jpeg"
+				src="/perScuole/alternanza.jpeg"
 			>
 				<>
 					<div className="pb-2">

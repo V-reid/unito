@@ -94,14 +94,14 @@ export const menuContent: {
 				description: "Progetti del gruppo di ricerca",
 			},
 			{
-				title: "Prodotti della Ricerca",
-				to: "/didattica-ricerca",
-				description: "Pubblicazioni dei ricercatori",
-			},
-			{
 				title: "Attività",
 				to: "/didattica-attivita",
 				description: "Proposte educative create dal gruppo di ricerca",
+			},
+			{
+				title: "Prodotti della Ricerca",
+				to: "/didattica-ricerca",
+				description: "Pubblicazioni dei ricercatori",
 			},
 		],
 	},
@@ -110,24 +110,32 @@ export const menuContent: {
 
 export const logos = [
 	{
+		title: "Università di Torino",
 		src: "./logo_unito.svg",
 		alt: "logo unito",
 		href: "https://www.unito.it/",
+		classNames: "",
 	},
 	{
+		title: "Atlante delle Professioni",
 		src: "./atlante.png",
 		alt: "logo Atlante delle professioni",
 		href: "https://atlantedelleprofessioni.it/",
+		classNames: "",
 	},
 	{
+		title: "Idem Garrai",
 		src: "./idem.png",
 		alt: "logo Idem Garrai",
 		href: "https://www.unito.it/servizi/servizi-online/unito-idem",
+		classNames: "",
 	},
 	{
+		title: "Easy Reading",
 		src: "./easyReading.png",
 		alt: "logo Easy Reading",
 		href: "https://www.easyreading.eu/",
+		classNames: "",
 	},
 ];
 
@@ -139,8 +147,7 @@ export const news = [
 		category: "Ricerca",
 		summary:
 			"Inaugurato il centro inter-dipartimentale focalizzato sull'applicazione di modelli IA per l'efficienza energetica e le smart-cities.",
-		image_url:
-			"https://www.polimi.it/fileadmin/_processed_/b/d/csm_026-Hero_corsi_Laurea_vs3_1920_7b11df0148.jpg",
+		image_url: "/news/lab_ricerca.jpeg",
 		tags: ["IA", "Sostenibilità", "Ricerca", "Laboratorio"],
 		full_article_content:
 			"Il Dipartimento di Informatica ha ufficialmente aperto le porte al nuovo Laboratorio di Ricerca Integrata, un'iniziativa congiunta con il Dipartimento di Ingegneria. Il laboratorio si dedicherà allo studio e allo sviluppo di algoritmi di Machine Learning e Deep Learning applicati direttamente a sfide ambientali e sociali, come l'ottimizzazione dei consumi energetici negli edifici pubblici e la modellazione predittiva per la gestione dei rifiuti urbani. L'obiettivo è posizionare UniTO come polo di eccellenza nella 'Green Computing'. Sono previste collaborazioni con aziende leader del settore e opportunità di tesi per gli studenti magistrali.",
@@ -152,8 +159,7 @@ export const news = [
 		category: "Eventi",
 		summary:
 			"Il Dipartimento ospiterà la prossima edizione di ICQC. Scadenza per la sottomissione degli abstract il 15 gennaio 2026.",
-		image_url:
-			"https://www.polimi.it/fileadmin/_processed_/e/a/csm_030-Hero_i_corsi_Versione3_1920_46ee7253c6.jpg",
+		image_url: "/news/quant.jpeg",
 		tags: ["Quantum Computing", "Conferenza", "Call for Papers"],
 		full_article_content:
 			"L'International Conference on Quantum Computing (ICQC) farà tappa a Torino nel giugno 2026. La comunità scientifica è invitata a sottomettere i propri lavori di ricerca che coprono aree che vanno dai Qubit e le architetture quantistiche, alla crittografia post-quantistica e agli algoritmi quantistici. La sottomissione degli abstract è aperta fino al 15 gennaio 2026. L'evento rappresenta una vetrina fondamentale per il Dipartimento, confermando la sua crescente rilevanza nel panorama internazionale della ricerca avanzata.",
@@ -165,8 +171,7 @@ export const news = [
 		category: "Didattica",
 		summary:
 			"La squadra 'UniTo_Coders' si classifica tra i primi 5, dimostrando le eccellenti competenze acquisite durante il corso di Algoritmi e Strutture Dati.",
-		image_url:
-			"https://www.polimi.it/fileadmin/_processed_/8/b/csm_034-Hero-dottorato_vs3_1920_3d106bbaab.jpg",
+		image_url: "/news/olimpiadi.jpeg",
 		tags: ["Studenti", "Programmazione", "Competizioni", "Didattica"],
 		full_article_content:
 			"Grande soddisfazione per il Dipartimento di Informatica dopo gli eccellenti risultati ottenuti dai suoi studenti alle recenti Olimpiadi Nazionali di Programmazione. La squadra 'UniTo_Coders', composta da tre brillanti iscritti al terzo anno, ha dimostrato notevoli capacità di problem solving e velocità di esecuzione. Il Prof. Rossi, tutor della squadra, ha sottolineato come questo successo sia il frutto di un'impegnativa preparazione e dell'alta qualità dei programmi didattici offerti dal Dipartimento.",
@@ -178,8 +183,7 @@ export const news = [
 		category: "Internazionale",
 		summary:
 			"Opportunità di mobilità per studenti della Laurea Magistrale nel settore della Cybersecurity. Scadenza bando: 30 novembre 2025.",
-		image_url:
-			"https://www.polimi.it/fileadmin/_processed_/a/f/csm_036-Hero_alta-formaz_1920_62ef168a26.jpg",
+		image_url: "/news/erasmus.jpeg",
 		tags: ["Erasmus", "Cybersecurity", "Bando", "Internazionale"],
 		full_article_content:
 			"È aperto il bando per 5 borse di mobilità ERASMUS+ che permetteranno agli studenti della Laurea Magistrale in Informatica di trascorrere un semestre presso l'Università di Helsinki, specializzandosi in tematiche avanzate di Cybersecurity e Sicurezza dei Dati. La partnership mira a rafforzare la collaborazione internazionale e offrire ai nostri studenti un'esperienza formativa unica in un contesto accademico di alto livello. I requisiti e le modalità di candidatura sono disponibili sul portale studenti.",

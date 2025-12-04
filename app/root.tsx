@@ -37,8 +37,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
 					content="università, didattica, laurea, docenti, corsi di insegnamento, orario lezioni, avvisi studenti, appelli, aule, iscrizione esami, newsletter, verbali, tesi disponibili, wap, Università degli Studi di Torino"
 				/>
 				<title>
-					Dipartimento di Informatica - Università
-					degli Studi di Torino
+					Sotto-Sito del Dipartimento di Informatica - Sezione per le
+					Scuole
 				</title>
 				<link
 					type="image/png"
