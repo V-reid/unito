@@ -23,7 +23,12 @@ const items: Omit<ModalType, "open" | "setIsOpen">[] = [
 export default function DiFormazione() {
 	return (
 		<div className="p-10 relative flex flex-col gap-10 max-w-4xl mx-auto pt-20">
-			<PageIntro title="Eventi di formazione"></PageIntro>
+			<PageIntro title="Eventi di Formazione">
+				Questa sezione raccoglie gli eventi di formazione a cui il
+				Dipartimento di Informatica partecipa. Qui trovi attività e
+				percorsi pensati per migliorare le tue competenze, lavorare in
+				squadra e metterti alla prova con sfide pratiche.
+			</PageIntro>
 			<Section
 				title="CYBERCHALLENGE.IT"
 				src="/formazione/cyberchallenge.jpeg"

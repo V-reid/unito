@@ -3,8 +3,9 @@ import type { Route } from "./+types/home";
 import { cn } from "~/utils";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router";
-import { ArrowLeft, ArrowRight, Mail, Phone } from "lucide-react";
+import { ArrowLeft, ArrowRight, Mail, Phone, Plus, Send } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "~/ui/tooltip";
+import { Button } from "~/ui/button";
 
 export function meta({}: Route.MetaArgs) {
 	return [
@@ -19,8 +20,12 @@ export default function Home() {
 	return (
 		<>
 			<Hero />
-			<News />
-			<People />
+			<div>
+				<News />
+			</div>
+			<div>
+				<People />
+			</div>
 			<Logos />
 		</>
 	);
@@ -91,16 +96,53 @@ function People() {
 			<div className="border-primary text-md w-fit  border-l-2 px-2 font-bold">
 				I nostri ricercatori
 			</div>
-			<div className="flex ">
+			<div className="flex flex-col gap-4">
 				<p className=" flex-1">
 					Tutte le attività proposte dal nostro dipartimento sono
 					state ideate dal nostro gruppo di ricerca. <br />
 					Scopri di più sui membri:
 				</p>
-				<div className="  flex flex-1 items-center justify-center">
+				<div className=" flex flex-1  items-center justify-start">
 					{professors.map((x) => (
 						<Person key={x.id} person={x} />
 					))}
+
+					<Tooltip>
+						<TooltipTrigger asChild>
+							<a
+								href={
+									"mailto:" +
+									professors.map((x) => x.mail).join(";")
+								}
+								className="relative -mr-2 hover:z-10 hover:scale-110 active:scale-95 focus:z-10 focus:scale-110 transition-all cursor-pointer"
+							>
+								<div className="grid place-items-center z-20 rounded-full ring-2 ring-gray-300 size-20 bg-white object-cover">
+									<Send />
+								</div>
+							</a>
+						</TooltipTrigger>
+						<TooltipContent
+							side="bottom"
+							className="bg-white flex flex-col items-center mb-5 border-b-2 border-primary"
+						>
+							<div className="text-lg ">
+								Contatta il gruppo di ricerca
+							</div>
+						</TooltipContent>
+						{/* <TooltipContent
+				sideOffset={-200}
+				className="-bottom-full  bg-white flex flex-col gap-1 text-sm items-start mb-5 border-l-2 border-primary"
+			>
+				<div className="flex gap-2 items-center">
+					<Mail className="size-4" />
+					<div>matteo.baldoni@unito.it</div>
+				</div>
+				<div className="flex gap-2 items-center">
+					<Phone className="size-4 " />
+					<div>0116706756</div>
+				</div>
+			</TooltipContent> */}
+					</Tooltip>
 				</div>
 			</div>
 		</div>
@@ -114,7 +156,7 @@ function Person({ person: x }: { person: ProfType }) {
 			<TooltipTrigger asChild>
 				<Link
 					to={"/professore/" + x.id}
-					className="relative -mr-2 hover:z-10 hover:scale-110 focus:z-10 focus:scale-110 transition-all cursor-pointer"
+					className="relative -mr-2 hover:z-10 hover:scale-110 active:scale-95 focus:z-10 focus:scale-110 transition-all cursor-pointer"
 					onMouseEnter={() => setHover(true)}
 					onMouseLeave={() => setHover(false)}
 				>
@@ -133,19 +175,6 @@ function Person({ person: x }: { person: ProfType }) {
 				<div className="text-lg capitalize">{x.name}</div>
 				<div className="text-md capitalize">{x.title}</div>
 			</TooltipContent>
-			{/* <TooltipContent
-				sideOffset={-200}
-				className="-bottom-full  bg-white flex flex-col gap-1 text-sm items-start mb-5 border-l-2 border-primary"
-			>
-				<div className="flex gap-2 items-center">
-					<Mail className="size-4" />
-					<div>matteo.baldoni@unito.it</div>
-				</div>
-				<div className="flex gap-2 items-center">
-					<Phone className="size-4 " />
-					<div>0116706756</div>
-				</div>
-			</TooltipContent> */}
 		</Tooltip>
 	);
 }
@@ -166,6 +195,7 @@ function News() {
 
 				<ArrowRight className="rounded-full ring-1 ring-gray-300 cursor-pointer p-2 size-10 hover:bg-gray-100" />
 			</div>
+			<div id="ricercatori"></div>
 		</div>
 	);
 }

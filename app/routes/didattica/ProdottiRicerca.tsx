@@ -518,7 +518,7 @@ export default function ProdottiRicerca() {
 		},
 		{
 			accessorKey: "tag",
-			header: "Tag",
+			header: "Categoria",
 			cell: ({
 				row: {
 					original: { tag },
@@ -736,6 +736,10 @@ export default function ProdottiRicerca() {
 				</Table>
 			</div>
 			<div className="flex items-center justify-end space-x-2 py-4">
+				<div className="text-muted-foreground flex-1 text-sm">
+					{table.getFilteredRowModel().rows.length} / {data.length}{" "}
+					risultati
+				</div>
 				<div className="space-x-2">
 					<label
 						htmlFor="prev_button_table"

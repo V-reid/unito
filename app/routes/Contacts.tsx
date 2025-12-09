@@ -1,4 +1,4 @@
-import { Building, Phone, Mail } from "lucide-react";
+import { Building, Phone, Mail, User } from "lucide-react";
 import { useState } from "react";
 import { Button } from "~/ui/button";
 import { cn } from "~/utils";
@@ -61,6 +61,15 @@ export default function Example() {
 									<dd>{x.value}</dd>
 								</a>
 							))}
+							<a
+								href="/#ricercatori"
+								className="flex gap-4 items-center"
+							>
+								<User />
+								<div className="underline text-blue-600">
+									Contatta i nostri ricercatori
+								</div>
+							</a>
 						</dl>
 					</div>
 				</div>

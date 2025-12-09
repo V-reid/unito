@@ -20,22 +20,24 @@ export const menuContent: {
 		to: "/eventi",
 		items: [
 			{
+				title: "Eventi di Formazione",
+				to: "/eventi-diFormazione",
+				description: "Formazione e competizioni informatiche",
+			},
+			{
 				title: "Eventi per Docenti",
 				to: "/eventi-perDocenti",
 				description:
 					"Spazio dedicato agli eventi formativi per docenti",
 			},
+
 			{
 				title: "Divulgazione Scientifica",
 				to: "/eventi-divulgazioneScientifica",
 				description:
 					"Eventi dedicati a scoprire e comprendere l'informatica",
 			},
-			{
-				title: "Eventi di Formazione",
-				to: "/eventi-diFormazione",
-				description: "Formazione e competizioni informatiche",
-			},
+
 			{
 				title: "Catalogo Eventi",
 				to: "/eventi-catalogo",
@@ -66,16 +68,17 @@ export const menuContent: {
 				description:
 					"Sezione dedicata ai futuri studenti della Scuola di Scienze della Natura",
 			},
-			{
-				title: "Catalogo Iniziative",
-				to: "/orientamento-catalogoIniziative",
-				description: "Presentazione delle iniziative di orientamento",
-			},
+
 			{
 				title: "Materiale Commissione Orientamento",
 				to: "/orientamento-materialeCommissione",
 				description:
 					"Documenti, linee guida e strumenti per facilitare l'orientamento",
+			},
+			{
+				title: "Catalogo Iniziative",
+				to: "/orientamento-catalogoIniziative",
+				description: "Presentazione delle iniziative di orientamento",
 			},
 		],
 	},
@@ -190,6 +193,13 @@ export const news = [
 	},
 ];
 
+export type DidatticaType = {
+	href: string;
+	name: string;
+	code?: string;
+	course: string;
+};
+
 export type ProfType = {
 	id: string;
 	name: string;
@@ -197,6 +207,7 @@ export type ProfType = {
 	img?: string;
 	mail?: string;
 	tel?: string;
+	didattica?: DidatticaType[];
 };
 
 export const professors: ProfType[] = [
@@ -207,6 +218,20 @@ export const professors: ProfType[] = [
 		img: "/professor/capecchi.jpeg",
 		mail: "sara.capecchi@unito.it ",
 		tel: "0116706747",
+		didattica: [
+			{
+				href: "https://laurea.informatica.unito.it/do/corsi.pl/Show?_id=t3a9",
+				name: "Metodologie e Tecnologie Didattiche per l'Informatica (PF24)",
+				code: "INF0193",
+				course: "Corso di laurea in Informatica",
+			},
+			{
+				href: "https://laurea.informatica.unito.it/do/corsi.pl/Show?_id=kjs9",
+				name: "Principi di Programmazione Orientata agli Oggetti",
+				code: "INF0332",
+				course: "Corso di laurea in Informatica",
+			},
+		],
 	},
 	{
 		id: "p002",
@@ -215,6 +240,32 @@ export const professors: ProfType[] = [
 		img: "/professor/gena.jpeg",
 		mail: "cgena@di.unito.it",
 		tel: "0116706827",
+		didattica: [
+			{
+				href: "https://www.didattica-cps.unito.it/do/corsi.pl/Show?_id=p48r",
+				name: "DESIGN DI APPLICAZIONI WEB",
+				code: "CPS0219",
+				course: "Corsi di Studio del Dipartimento di Culture, Politica e Società",
+			},
+			{
+				href: "https://laurea.informatica.unito.it/do/corsi.pl/Show?_id=0fpi",
+				name: "Human-Computer Interaction",
+				code: "INF0340",
+				course: "Corso di laurea in Informatica",
+			},
+			{
+				href: "https://www.didattica-cps.unito.it/do/corsi.pl/Show?_id=lxmr",
+				name: "INTERAZIONE PERSONA-MACCHINA: APPROCCI AVANZATI",
+				code: "CPS0892",
+				course: "Corsi di Studio del Dipartimento di Culture, Politica e Società",
+			},
+			{
+				href: "https://www.didattica-cps.unito.it/do/corsi.pl/Show?_id=pevb",
+				name: "INTRODUZIONE ALL'INFORMATICA E ALLE RETI",
+				code: "CPS0202",
+				course: "Corsi di Studio del Dipartimento di Culture, Politica e Società",
+			},
+		],
 	},
 	{
 		id: "p003",
@@ -249,12 +300,72 @@ export const professors: ProfType[] = [
 		tel: "0116706845",
 	},
 	{
+		id: "p009",
+		name: "Cristina Baroglio",
+		title: "Prof.ssa",
+		img: "/professor/baroglio.jpg",
+		mail: "cristina.baroglio@unito.it",
+		tel: "+39 011 6706703",
+		didattica: [
+			{
+				href: "https://www.matematica.unito.it/do/corsi.pl/Show?_id=jzzx",
+				name: "Architettura dei calcolatori e sistemi operativi",
+				code: "MAT0325",
+				course: "Corso di laurea in matematica",
+			},
+			{
+				href: "https://laurea.informatica.unito.it/do/corsi.pl/Show?_id=wlnw",
+				name: "Sistemi Intelligenti",
+				code: "INF0338",
+				course: "Corso di laurea in Informatica",
+			},
+			{
+				href: "http://laurea.educ.di.unito.it/index.php/offerta-formativa/insegnamenti/elenco-completo/elenco-completo/scheda-insegnamento?cod=MFN0601&amp;codA=&amp;year=2020&amp;orienta=U",
+				name: "Sistemi Operativi (primo semestre)",
+
+				course: "Corso di laurea in Informatica",
+			},
+			{
+				href: "http://laurea.educ.di.unito.it/index.php/offerta-formativa/insegnamenti/elenco-completo/elenco-completo/scheda-insegnamento?cod=MFN0582&amp;codA=&amp;year=2020&amp;orienta=P",
+				name: "Sistemi Intelligenti (secondo semestre)",
+
+				course: "Corso di laurea in Informatica",
+			},
+		],
+	},
+	{
 		id: "p007",
 		name: "Matteo Baldoni",
 		title: "Prof",
 		img: "/professor/baldoni.jpeg",
 		mail: "matteo.baldoni@unito.it",
 		tel: "0116706756",
+		didattica: [
+			{
+				href: "https://magistrale.informatica.unito.it/do/corsi.pl/Show?_id=85mm",
+				name: "Agenti Intelligenti",
+				code: "MFN1348",
+				course: "Corso di laurea magistrale in Informatica",
+			},
+			{
+				href: "https://magistrale.informatica.unito.it/do/corsi.pl/Show?_id=8dgv",
+				name: "Modellazione di Dati e Processi Aziendali",
+				code: "INF0104",
+				course: "Corso di laurea magistrale in Informatica",
+			},
+			{
+				href: "https://dott-informatica.campusnet.unito.it/do/corsi.pl/Show?_id=wo0s",
+				name: "Reasoning about ontologies, causality, preferences, for explainability, accountability and compliance",
+				code: "INF01",
+				course: "PhD in Computer Science",
+			},
+			{
+				href: "https://laurea.informatica.unito.it/do/corsi.pl/Show?_id=9dk8",
+				name: "Sviluppo delle Applicazioni Software",
+				code: "MFN0606",
+				course: "Corso di laurea in Informatica",
+			},
+		],
 	},
 	{
 		id: "p008",
@@ -263,5 +374,64 @@ export const professors: ProfType[] = [
 		img: "/professor/pensa.jpeg",
 		mail: "ruggero.pensa@unito.it",
 		tel: "0116706798",
+	},
+	{
+		id: "p0011",
+		name: "Mattutino Claudio",
+		title: "Personale Tecnico Amministrativo",
+		img: "/professor/mattutino.jpg",
+		mail: "claudio.mattutino@unito.it",
+		tel: "0116706775",
+	},
+	{
+		id: "p0010",
+		name: "Amon Rapp",
+		title: "Personale Tecnico Amministrativo",
+		img: "/professor/rapp.png",
+		mail: "amon.rapp@unito.it",
+		didattica: [
+			{
+				href: "https://www.didattica-cps.unito.it/do/corsi.pl/Show?_id=bdxn",
+				name: "DESIGN OF INTERACTIVE SYSTEMS",
+				code: "CPS0557",
+				course: "Corsi di Studio del Dipartimento di Culture, Politica e Società",
+			},
+
+			{
+				href: "https://www.didattica-cps.unito.it/do/corsi.pl/Show?_id=bagc",
+				name: "INTELLIGENZA ARTIFICIALE",
+				code: "CPS0552",
+				course: "Corsi di Studio del Dipartimento di Culture, Politica e Società",
+			},
+
+			{
+				href: "https://www.didattica-cps.unito.it/do/corsi.pl/Show?_id=lzfi",
+				name: "LABORATORIO DESIGN OF INTERACTIVE SYSTEMS",
+				code: "CPS0680",
+				course: "Corsi di Studio del Dipartimento di Culture, Politica e Società",
+			},
+			{
+				href: "https://www.didattica-cps.unito.it/do/corsi.pl/Show?_id=iceu",
+				name: "TEORIE DELL'INTERAZIONE PERSONA-MACCHINA",
+				code: "CPS0904",
+				course: "Corsi di Studio del Dipartimento di Culture, Politica e Società",
+			},
+			{
+				href: "https://www.matematica.unito.it/do/corsi.pl/Show?_id=ub1n",
+				name: "Informatica (COGNOMI A-K) ",
+				code: "MAT0289",
+				course: "Corso di laurea in matematica",
+			},
+			{
+				href: "https://dott-spae.campusnet.unito.it/do/corsi.pl/Show?_id=ik1w",
+				name: "Tecnologie, interazione, organizzazioni",
+				course: "Dottorato in Scienze Psicologiche, Antropologiche e Pedagogiche",
+			},
+			{
+				href: "https://dott-informatica.campusnet.unito.it/do/corsi.pl/Show?_id=ipwd",
+				name: "Human-Generative AI Interaction",
+				course: "PhD in Computer Science",
+			},
+		],
 	},
 ];

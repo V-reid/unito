@@ -16,9 +16,6 @@ interface HeaderLinkType {
 type MenuType = "events" | "orientation" | "material" | null;
 
 export default function Header() {
-	const [isOpen, setIsOpen] = useState(false);
-	const [searchQuery, setSearchQuery] = useState("");
-	const [isHovered, setIsHovered] = useState(false);
 	const [activeMenu, setActiveMenu] = useState<MenuType>(null);
 	const [previousMenu, setPreviousMenu] = useState<MenuType>(null);
 	const location = useLocation();
