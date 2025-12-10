@@ -43,14 +43,14 @@ export default function Professor() {
 								className="flex gap-2 items-center underline text-blue-600"
 								href={`mailto:${mail}`}
 							>
-								<Mail className="size-4" />
+								<Mail className="size-5" />
 								<div>{mail}</div>
 							</a>
 							<a
 								className="flex gap-2 items-center underline text-blue-600"
 								href={`tel:${tel}`}
 							>
-								<Phone className="size-6 " />
+								<Phone className="size-5 " />
 								<div>{tel}</div>
 							</a>
 						</div>
