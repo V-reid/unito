@@ -35,8 +35,13 @@ export default function LaureaMagistrale() {
 				</div>
 			</PageIntro>
 			<div className="flex flex-col gap-5">
-				{items.map((x) => (
-					<CardInfo title={x.title} content={x.content} />
+				{items.map((x, i) => (
+					<CardInfo
+						i={i}
+						title={x.title}
+						content={x.content}
+						key={i + "laurea magistrale"}
+					/>
 				))}
 			</div>
 		</div>
@@ -57,21 +62,24 @@ const items = [
 		content: (
 			<>
 				<TitleDescr title="Tipo di accesso">
-					accesso libero con valutazione del possesso requisiti
-					curriculari minimi e di adeguata preparazione personale{" "}
+					Accesso libero con valutazione del possesso requisiti
+					curriculari minimi e di adeguata preparazione
+					personale.{" "}
 				</TitleDescr>
 				<TitleDescr title="Scuola di riferimento">
-					Scuola di Scienze della Natura
+					Scuola di Scienze della Natura.
 				</TitleDescr>
 				<TitleDescr title="Altre strutture di riferimento">
 					<ul className="list-disc pl-10">
 						<li>
-							<ExternalA href="">
+							<ExternalA href="https://magistrale.informatica.unito.it/do/home.pl/View?doc=biblioteca.html">
 								Biblioteca di Informatica
 							</ExternalA>
 						</li>
 						<li>
-							<ExternalA href="">Laurea in Informatica</ExternalA>
+							<ExternalA href="https://laurea.informatica.unito.it/">
+								Laurea in Informatica
+							</ExternalA>
 						</li>
 					</ul>
 				</TitleDescr>
@@ -79,13 +87,17 @@ const items = [
 				<TitleDescr title="Strumenti e servizi utili">
 					<ul className="list-disc pl-10">
 						<li>
-							<ExternalA href="">Info e servizi</ExternalA>
+							<ExternalA href="https://laurea.informatica.unito.it//do/home.pl/View?doc=info_e_servizi.html">
+								Info e servizi
+							</ExternalA>
 						</li>
 						<li>
-							<ExternalA href="">FAQ</ExternalA>
+							<ExternalA href="https://magistrale.informatica.unito.it/do/home.pl/View?doc=Faq.html">
+								FAQ
+							</ExternalA>
 						</li>
 						<li>
-							<ExternalA href="">
+							<ExternalA href="https://laurea.informatica.unito.it/do/home.pl/View?doc=apertura_login.html">
 								Apertura account @educ.di.unito.it
 							</ExternalA>
 						</li>
@@ -94,19 +106,23 @@ const items = [
 				<TitleDescr title="Organizzazione">
 					<ul className="list-disc pl-10">
 						<li>
-							<ExternalA href="">Presidente</ExternalA>
+							<ExternalA href="https://magistrale.informatica.unito.it/do/home.pl/View?doc=Presidente.html">
+								Presidente
+							</ExternalA>
 						</li>
 						<li>
-							<ExternalA href="">
+							<ExternalA href="https://magistrale.informatica.unito.it/do/home.pl/View?doc=Rappresentanti_degli_Studenti.html">
 								{" "}
 								Rappresentanza Studentesca
 							</ExternalA>
 						</li>
 						<li>
-							<ExternalA href="">Management didattico</ExternalA>
+							<ExternalA href="https://magistrale.informatica.unito.it/do/home.pl/View?doc=management_didattico.html">
+								Management didattico
+							</ExternalA>
 						</li>
 						<li>
-							<ExternalA href="">
+							<ExternalA href="https://magistrale.informatica.unito.it/do/home.pl/View?doc=segreteria_studenti.html">
 								Segreteria studentesse e studenti
 							</ExternalA>
 						</li>
@@ -121,7 +137,7 @@ const items = [
 				<div>Incontri</div>
 				<div className="flex items-center font-normal text-base gap-2">
 					<MapPin className="size-5 " />
-					<ExternalA href="">
+					<ExternalA href="https://www.google.it/maps/place/Corso+Svizzera,+185,+10149+Torino+TO/@45.0916674,7.6596037,17z/data=!3m1!4b1!4m6!3m5!1s0x47886db2fe53c3bf:0xef4969ed9ca05d2d!8m2!3d45.0916636!4d7.6621786!16s%2Fg%2F11k1c_lh4_?entry=ttu&g_ep=EgoyMDI1MTIwNy4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D">
 						Corso Svizzera 185 - 10149 Torino
 					</ExternalA>
 				</div>
@@ -136,8 +152,8 @@ const items = [
 					{" "}
 					<ul className="list-disc pl-10">
 						<li>
-							<ExternalA href="">
-								15 settembre 2025 alle 14
+							<ExternalA href="https://magistrale.informatica.unito.it/do/avvisi.pl/Show?_id=xy5o">
+								8 aprile 2025
 							</ExternalA>
 						</li>
 					</ul>
@@ -146,7 +162,7 @@ const items = [
 				<TitleDescr title="Presentazione delle Lauree Magistrali in cui il Dipartimento di Informatica partecipa">
 					<ul className="list-disc pl-10">
 						<li>
-							<ExternalA href="">
+							<ExternalA href="https://magistrale.informatica.unito.it/do/avvisi.pl/Show?_id=ca3c">
 								22 maggio 2025, 9.30-12.30 | Porte Aperte:
 								presentazione della laurea magistrale in
 								Informatica{" "}
@@ -157,7 +173,7 @@ const items = [
 				<TitleDescr title="Per informazioni sulle iniziative di orientamento">
 					<ul className="list-disc pl-10">
 						<li>
-							<ExternalA href="">
+							<ExternalA href="orientamento@di.unito.it">
 								orientamento@di.unito.it
 							</ExternalA>
 						</li>
@@ -173,7 +189,7 @@ const items = [
 				<TitleDescr title="Per informazioni sulle iniziative di orientamento">
 					<ul className="list-disc pl-10">
 						<li>
-							<ExternalA href="">
+							<ExternalA href="sportello_orientamento@di.unito.it">
 								sportello_orientamento@di.unito.it
 							</ExternalA>
 						</li>
@@ -182,7 +198,7 @@ const items = [
 				<TitleDescr title="Disabilità e disturbi specifici dell'apprendimento">
 					<ul className="list-disc pl-10">
 						<li>
-							<ExternalA href="">
+							<ExternalA href="https://magistrale.informatica.unito.it/do/home.pl/View?doc=studenti_dsa.html">
 								servizi e i contatti
 							</ExternalA>{" "}
 						</li>
@@ -191,7 +207,7 @@ const items = [
 				<TitleDescr title="Contatti, informazioni sulle ammissioni e supporto alla formazione dei piani di studio">
 					<ul className="list-disc pl-10">
 						<li>
-							<ExternalA href="">
+							<ExternalA href="ammissione-lm18@educ.di.unito.it">
 								ammissione-lm18@educ.di.unito.it{" "}
 							</ExternalA>{" "}
 						</li>
@@ -199,8 +215,8 @@ const items = [
 				</TitleDescr>
 				<TitleDescr title="Servizi per l’Orientamento della Scuola di Scienze della Natura">
 					<div>
-						<span>scrivi a </span>
-						<ExternalA href="">
+						<span>Scrivi a </span>
+						<ExternalA href="orientamento.scienzedellanatura@unito.it">
 							orientamento.scienzedellanatura@unito.it
 						</ExternalA>{" "}
 						<span>
@@ -212,17 +228,17 @@ const items = [
 				<TitleDescr title="Attività di Orientamento a distanza">
 					<ul className="list-disc pl-10">
 						<li>
-							<ExternalA href="">
+							<ExternalA href="https://www.scienzedellanatura.unito.it/it/orientamento">
 								Sportello virtuale Orientamento
 							</ExternalA>
 						</li>
 						<li>
-							<ExternalA href="">
+							<ExternalA href="https://www.facebook.com/pages/Scienze-Informa/188130977904650">
 								Facebook Scuola di Scienze della Natura
 							</ExternalA>
 						</li>
 						<li>
-							<ExternalA href="">
+							<ExternalA href="https://www.youtube.com/channel/UCY1pK9OiBNtzoZX7uEUJDIw?view_as=subscriber">
 								Youtube Scuola di Scienze della Natura
 							</ExternalA>
 						</li>
@@ -231,7 +247,9 @@ const items = [
 				<TitleDescr title="Informazioni di carattere generale">
 					<ul className="list-disc pl-10">
 						<li>
-							<ExternalA href="">Orientamento</ExternalA>{" "}
+							<ExternalA href="https://www.unito.it/didattica/orientamento">
+								Orientamento
+							</ExternalA>{" "}
 						</li>
 					</ul>
 				</TitleDescr>
@@ -249,7 +267,7 @@ const items = [
 				<TitleDescr title="Perché studiare e iscriversi alla Laurea Magistrale">
 					<ul className="list-disc pl-10">
 						<li>
-							<ExternalA href="">
+							<ExternalA href="http://prezi.com/w6ikdmdl3t9y/?utm_campaign=share&utm_medium=copy&rc=ex0share">
 								Guarda le Slides in Prezi
 							</ExternalA>
 						</li>
@@ -258,7 +276,7 @@ const items = [
 				<TitleDescr title="Introduzione al corso di Laurea">
 					<ul className="list-disc pl-10">
 						<li>
-							<ExternalA href="">
+							<ExternalA href="https://youtu.be/TKMI8BxxQWI">
 								Benvenuto della Vicedirettrice alla Didattica
 							</ExternalA>
 						</li>
@@ -267,19 +285,19 @@ const items = [
 				<TitleDescr title="Strumenti utili">
 					<ul className="list-disc pl-10">
 						<li>
-							<ExternalA href="">
+							<ExternalA href="https://drive.google.com/file/d/1xM3CQ-xvkdkqlYlMAEUxIeWKb30zpJbs/view?usp=drive_link">
 								{" "}
 								Depliant informativo{" "}
 							</ExternalA>
 						</li>
 						<li>
-							<ExternalA href="">
+							<ExternalA href="https://magistrale.informatica.unito.it/do/home.pl/View?doc=Requisiti_di_ammissione.html">
 								Requisiti di ammissione alla Laurea Magistrale
 								in Informatica
 							</ExternalA>
 						</li>
 						<li>
-							<ExternalA href="">
+							<ExternalA href="https://docs.google.com/document/d/12wFKLg22NPi6J4u1lw4_zPfIyrPs9_pPESE8BSY7J0I/edit?usp=sharing">
 								Scadenze: tasse, date, colloqui, etc
 							</ExternalA>
 						</li>
@@ -300,7 +318,7 @@ const items = [
 					<ul className="list-disc pl-10">
 						<li>
 							{" "}
-							<ExternalA href="">
+							<ExternalA href="https://youtu.be/gZZvUAKnbOY">
 								Laurea Magistrale in Informatica: Modalità di
 								ammissione
 							</ExternalA>
@@ -312,45 +330,57 @@ const items = [
 				>
 					<ul className="list-disc pl-10">
 						<li>
-							<ExternalA href="">
+							<ExternalA href="https://youtu.be/hQUJzLD9mxg">
 								Organizzazione dell'indirizzo
 							</ExternalA>
 						</li>
 						<li>
-							<ExternalA href="">Sbocchi lavorativi</ExternalA>
+							<ExternalA href="https://youtu.be/izUlw_CVU08">
+								Sbocchi lavorativi
+							</ExternalA>
 						</li>
 						<li>
-							<ExternalA href="">Mappa mentale</ExternalA>
+							<ExternalA href="https://drive.google.com/file/d/1jI4Ae9mxz482TRYZfyfHzv6PpVr54CQ3/view?usp=sharing">
+								Mappa mentale
+							</ExternalA>
 						</li>
 					</ul>
 				</TitleDescr>
 				<TitleDescr title="Indirizzo Immagini, Visione e Realtà Virtuale">
 					<ul className="list-disc pl-10">
 						<li>
-							<ExternalA href="">
+							<ExternalA href="https://youtu.be/H8IwsS3WTRE">
 								Organizzazione dell'indirizzo
 							</ExternalA>
 						</li>
 						<li>
-							<ExternalA href="">Sbocchi lavorativi</ExternalA>
+							<ExternalA href="https://youtu.be/n3S-t3fWjUk">
+								Sbocchi lavorativi
+							</ExternalA>
 						</li>
 						<li>
-							<ExternalA href="">Mappa mentale</ExternalA>
+							<ExternalA href="https://drive.google.com/file/d/1O0uF3OFsxZE6sht9H-osy8SbtHtiFkrR/view?usp=drive_link">
+								Mappa mentale
+							</ExternalA>
 						</li>
 					</ul>
 				</TitleDescr>
 				<TitleDescr title="Indirizzo Reti e Sistemi Informatici">
 					<ul className="list-disc pl-10">
 						<li>
-							<ExternalA href="">
+							<ExternalA href="https://youtu.be/fnJRMgWz5gQ">
 								Organizzazione dell'indirizzo
 							</ExternalA>
 						</li>
 						<li>
-							<ExternalA href="">Sbocchi lavorativi</ExternalA>
+							<ExternalA href="https://youtu.be/p8Hs67RrSYY">
+								Sbocchi lavorativi
+							</ExternalA>
 						</li>
 						<li>
-							<ExternalA href="">Mappa mentale</ExternalA>
+							<ExternalA href="https://magistrale.informatica.unito.it/images/mappa_indirizzi/Indirizzo_Reti_e_Sistemi_Informatici-con-loghi.png">
+								Mappa mentale
+							</ExternalA>
 						</li>
 					</ul>
 				</TitleDescr>
@@ -368,7 +398,7 @@ const items = [
 				<div>
 					L'Università di Torino mette a disposizione quiz e verifiche
 					con valutazione automatica per prepararti ai test:{" "}
-					<ExternalA href="">
+					<ExternalA href="https://www.unito.it/didattica/orientamento/strumenti-e-servizi-di-orientamento">
 						scopri gli strumenti UniTO per l'orientamento
 					</ExternalA>
 				</div>
@@ -392,12 +422,17 @@ function TitleDescr({
 function CardInfo({
 	title,
 	content,
+	i,
 }: {
+	i: number;
 	title: JSX.Element;
 	content: JSX.Element;
 }) {
 	return (
-		<Card className="w-full  border-slate-400">
+		<Card className="w-full  border-slate-400" id={"section_" + i}>
+			<a href={"#section_" + (i + 1)} className="sr-only">
+				Salta alla prossima sezione
+			</a>
 			<CardHeader>
 				<CardTitle className="text-2xl font-bold ">{title}</CardTitle>
 			</CardHeader>

@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { Button } from "~/ui/button";
 import { menuContent, type MenuLink, type LinkType } from "~/lib/constant";
 import Logo from "./Logo";
+import Breadcrumb from "./Breadcrumb";
 
 interface HeaderLinkType {
 	label: string;
@@ -45,90 +46,116 @@ export default function Header() {
 	type NewType = MenuLink;
 
 	return (
-		<header className="bg-white border-b border-slate-200 sticky top-0 z-50">
-			<div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-				<div className="flex items-center gap-8">
-					<Logo />
-					<nav className="hidden md:flex items-center gap-6">
-						{Object.entries(menuContent).map((x) => (
-							<>
-								{Object.hasOwn(x[1], "items") ? (
-									<HeaderLinkWithMenu
-										label={x[1].title}
-										onClick={() =>
-											handleMenuChange(x[0] as MenuType)
-										}
-										to={(x[1] as NewType).to ?? ""}
-										isActive={activeMenu == x[0]}
-									/>
-								) : (
-									<HeaderLink
-										label={(x[1] as LinkType).title}
-										to={(x[1] as LinkType).to}
-									/>
-								)}
-							</>
-						))}
-					</nav>
+		<>
+			<header className="bg-white border-b border-slate-200 sticky top-0 z-50">
+				<div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+					<div className="flex items-center gap-8">
+						<Logo />
+
+						<a href="#main-content" className="sr-only">
+							Salta navigazione
+						</a>
+						<nav className="hidden md:flex items-center gap-6">
+							{Object.entries(menuContent).map((x) => (
+								<div key={x[1].title + "headerMenu"}>
+									{Object.hasOwn(x[1], "items") ? (
+										<HeaderLinkWithMenu
+											label={x[1].title}
+											onClick={() =>
+												handleMenuChange(
+													x[0] as MenuType
+												)
+											}
+											to={(x[1] as NewType).to ?? ""}
+											isActive={activeMenu == x[0]}
+										/>
+									) : (
+										<HeaderLink
+											label={(x[1] as LinkType).title}
+											to={(x[1] as LinkType).to}
+										/>
+									)}
+								</div>
+							))}
+						</nav>
+					</div>
+
+					<SearchBar />
 				</div>
 
-				<SearchBar />
-			</div>
+				<AnimatePresence mode="wait">
+					{activeMenu && (
+						<motion.div
+							initial={{ height: 0, opacity: 0 }}
+							animate={{ height: "auto", opacity: 1 }}
+							exit={{ height: 0, opacity: 0 }}
+							transition={{ duration: 0.3 }}
+							className="overflow-hidden border-t border-slate-200 bg-white "
+						>
+							<div className="max-w-7xl mx-auto px-4 py-8 flex gap-4 items-center">
+								<div>
+									{
+										(menuContent[activeMenu] as MenuLink)
+											.description
+									}
+								</div>
+								<motion.div
+									key={activeMenu}
+									initial={{
+										x: getDirection() * 100,
+										opacity: 0,
+									}}
+									animate={{ x: 0, opacity: 1 }}
+									exit={{
+										x: getDirection() * -100,
+										opacity: 0,
+									}}
+									transition={{ duration: 0.3 }}
+									className="grid grid-cols-1 md:grid-cols-4 gap-6"
+								>
+									{(
+										menuContent[activeMenu] as MenuLink
+									).items.map((item, index) => (
+										<Link
+											key={index + item.title}
+											to={item.to}
+											className={cn(
+												"after:bg-primary relative after:absolute  after:bottom-0  after:w-full  after:left-0 after:transition-all group p-4 rounded-lg hover:bg-slate-100  bg-slate-50 transition-colors",
+												"/" +
+													location.pathname.split(
+														"/"
+													)[1] ==
+													item.to
+													? "after:h-[2px]"
+													: "after:h-0",
+												item.notIimplemented
+													? "opacity-50"
+													: ""
+											)}
+										>
+											<h3 className="mb-2 group-hover:text-primary-600 transition-colors flex justify-between items-center">
+												<div>{item.title}</div>
 
-			<AnimatePresence mode="wait">
-				{activeMenu && (
-					<motion.div
-						initial={{ height: 0, opacity: 0 }}
-						animate={{ height: "auto", opacity: 1 }}
-						exit={{ height: 0, opacity: 0 }}
-						transition={{ duration: 0.3 }}
-						className="overflow-hidden border-t border-slate-200 bg-white "
-					>
-						<div className="max-w-7xl mx-auto px-4 py-8 flex gap-4 items-center">
-							<div>
-								{
-									(menuContent[activeMenu] as MenuLink)
-										.description
-								}
+												<div className="text-sm font-bold">
+													{item.notIimplemented
+														? "Coming soon"
+														: ""}
+												</div>
+											</h3>
+											<p className="text-slate-600 text-sm">
+												{item.description}
+											</p>
+										</Link>
+									))}
+								</motion.div>
 							</div>
-							<motion.div
-								key={activeMenu}
-								initial={{
-									x: getDirection() * 100,
-									opacity: 0,
-								}}
-								animate={{ x: 0, opacity: 1 }}
-								exit={{ x: getDirection() * -100, opacity: 0 }}
-								transition={{ duration: 0.3 }}
-								className="grid grid-cols-1 md:grid-cols-4 gap-6"
-							>
-								{(
-									menuContent[activeMenu] as MenuLink
-								).items.map((item, index) => (
-									<Link
-										key={index}
-										to={item.to}
-										className={cn(
-											"after:bg-primary relative after:absolute after:bottom-0  after:w-full  after:left-0 after:transition-all group p-4 rounded-lg hover:bg-slate-100  bg-slate-50 transition-colors",
-											location.pathname == item.to
-												? "after:h-[2px]"
-												: "after:h-0"
-										)}
-									>
-										<h3 className="mb-2 group-hover:text-primary-600 transition-colors">
-											{item.title}
-										</h3>
-										<p className="text-slate-600 text-sm">
-											{item.description}
-										</p>
-									</Link>
-								))}
-							</motion.div>
-						</div>
-					</motion.div>
-				)}
-			</AnimatePresence>
-		</header>
+						</motion.div>
+					)}
+				</AnimatePresence>
+			</header>
+
+			<Breadcrumb />
+		</>
 	);
 }
 

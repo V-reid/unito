@@ -572,7 +572,7 @@ export default function ProdottiRicerca() {
 
 	return (
 		<div className="w-full max-w-6xl mx-auto py-10">
-			<PageIntro title="Prodotti della Ricerca"></PageIntro>
+			<PageIntro title="Pubblicazioni"></PageIntro>
 			<div className="flex flex-col items-start py-4 gap-4">
 				<div className="flex gap-3 items-center">
 					<label
@@ -608,6 +608,7 @@ export default function ProdottiRicerca() {
 							"Altri Progetti",
 						].map((x) => (
 							<div
+								key={"prodotti" + x}
 								role="button"
 								tabIndex={0}
 								onKeyDown={(v) => {

@@ -4,6 +4,7 @@ export type LinkType = {
 	to: string;
 	title: string;
 	description?: string | JSX.Element;
+	notIimplemented?: boolean;
 };
 export type MenuLink = {
 	title: string;
@@ -20,15 +21,17 @@ export const menuContent: {
 		to: "/eventi",
 		items: [
 			{
-				title: "Eventi di Formazione",
+				title: "Competizioni Informatiche",
 				to: "/eventi-diFormazione",
-				description: "Formazione e competizioni informatiche",
+				description:
+					"Eventi che mettono in gioco le abilità informatiche dei partecipanti",
 			},
 			{
 				title: "Eventi per Docenti",
 				to: "/eventi-perDocenti",
 				description:
 					"Spazio dedicato agli eventi formativi per docenti",
+				notIimplemented: true,
 			},
 
 			{
@@ -43,6 +46,7 @@ export const menuContent: {
 				to: "/eventi-catalogo",
 				description:
 					"Archivio completo di eventi formativi e divulgativi",
+				notIimplemented: true,
 			},
 		],
 	},
@@ -67,6 +71,7 @@ export const menuContent: {
 				to: "/orientamento-scienzeDellaNatura",
 				description:
 					"Sezione dedicata ai futuri studenti della Scuola di Scienze della Natura",
+				notIimplemented: true,
 			},
 
 			{
@@ -74,11 +79,13 @@ export const menuContent: {
 				to: "/orientamento-materialeCommissione",
 				description:
 					"Documenti, linee guida e strumenti per facilitare l'orientamento",
+				notIimplemented: true,
 			},
 			{
 				title: "Catalogo Iniziative",
 				to: "/orientamento-catalogoIniziative",
 				description: "Presentazione delle iniziative di orientamento",
+				notIimplemented: true,
 			},
 		],
 	},
@@ -89,22 +96,23 @@ export const menuContent: {
 			{
 				title: "Per le Scuole",
 				to: "/didattica-perLeScuole",
-				description: "Iniziative per le scuole primarie e secondarie",
+				description:
+					"Iniziative e attività per le scuole primarie e secondarie",
 			},
+			// {
+			// 	title: "Progetti",
+			// 	to: "/didattica-progetti",
+			// 	description: "Progetti del gruppo di ricerca",
+			// },
+			// {
+			// 	title: "Attività",
+			// 	to: "/didattica-attivita",
+			// 	description: "Proposte educative create dal gruppo di ricerca",
+			// },
 			{
-				title: "Progetti",
-				to: "/didattica-progetti",
-				description: "Progetti del gruppo di ricerca",
-			},
-			{
-				title: "Attività",
-				to: "/didattica-attivita",
-				description: "Proposte educative create dal gruppo di ricerca",
-			},
-			{
-				title: "Prodotti della Ricerca",
+				title: "Ricerca",
 				to: "/didattica-ricerca",
-				description: "Pubblicazioni dei ricercatori",
+				description: "Progetti e pubblicazioni dei ricercatori",
 			},
 		],
 	},

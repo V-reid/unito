@@ -91,11 +91,14 @@ export default function divulgazioneScientifica() {
 				</>
 			</PageIntro>
 			{Object.values(items).map((x) => (
-				<div className="py-2">
+				<div className="py-2" key={x.title + "divulgazione"}>
 					<Title>{x.title}</Title>
 					<div className="grid grid-cols-2 gap-5 place-items-center w-fit  ">
 						{x.items.map((x) => (
-							<div className="h-80 aspect-square">
+							<div
+								className="h-80 aspect-square"
+								key={x.title.toString()}
+							>
 								<ModalCard
 									key={x.title.toString()}
 									onClick={() => {

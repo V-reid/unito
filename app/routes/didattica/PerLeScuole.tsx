@@ -5,211 +5,40 @@ import { cn } from "~/utils";
 import { ExternalA } from "~/components/ExternalA";
 import { Title } from "~/components/Title";
 import PageIntro from "~/components/PageIntro";
+import { Link } from "react-router";
 
 export default function PerLeScuole() {
 	return (
 		<div className="p-10 relative flex flex-col gap-10 max-w-4xl mx-auto pt-20">
 			<PageIntro title="Per le Scuole">
-				Il Dipartimento di Informatica svolge un'intensa attività di
-				rapporti con le Scuole (sia primarie che secondarie),
-				principalmente attraverso la sua Commissione Orientamento e
-				Informatica nelle Scuole che si occupa:
-				<ul className="list-disc pl-10 ">
-					<li>
-						di mettere in relazione, sulle tematiche
-						dell’insegnamento dell’informatica, il Dipartimento e le
-						scuole dell’obbligo del territorio
-					</li>
-					<li>
-						di coordinare le attività legate al passaggio delle
-						studentesse e degli studenti dalla scuola superiore
-						verso la scelta dei Corsi di Laurea o Master
-						Universitari in cui l'Informatica ha un ruolo primario
-					</li>
-				</ul>
+				<div className="font-[Helvetica]">
+					Questa sezione raccoglie le iniziative, le attività e i
+					materiali dedicati alle scuole con l’obiettivo di supportare
+					e valorizzare l’insegnamento dell’informatica. Attraverso la
+					collaborazione tra il Dipartimento e il mondo della scuola,
+					vengono promosse attività di orientamento, percorsi
+					didattici e risorse sviluppate da ricercatori e
+					ricercatrici, per accompagnare studenti e insegnanti nello
+					sviluppo delle competenze digitali e nel passaggio verso i
+					percorsi universitari.
+				</div>
 			</PageIntro>
-
-			<Section
-				title="Bambini e bambine all’Università"
-				src="/perScuole/bambini.jpeg"
-			>
-				<>
-					<div className="pb-3">
-						<div>
-							<em>Rivolto a</em>: scuole primarie.
-						</div>
-						<div>
-							<em>Periodo</em>: ogni anno nei mesi tra marzo e
-							maggio.
-						</div>
-					</div>
-					<p>
-						Progetto promosso dalla Città di Torino con l'Università
-						di Torino (ed altre istituzioni), in collaborazione con
-						Agorà Scienza, per avvicinare le/i piccole/i allieve/i
-						delle scuole primarie al mondo della ricerca scientifica
-						e tecnologica e per costruire un immaginario di
-						accessibilità all'alta formazione in condizioni di pari
-						opportunità. <br />
-						Il Dipartimento di Informatica ha ospitato gruppi di
-						bambini delle scuole elementari e ha offerto attività da{" "}
-						<ExternalA href="">Programma il Futuro</ExternalA>.
-					</p>
-				</>
-			</Section>
-
-			<Section
-				title="Progetto Lauree Scientifiche. Laboratori e attività"
-				src="/perScuole/lauree.jpeg"
-				classNameImg="object-top"
-			>
-				<>
-					<div className="pb-2 object">
-						<div>
-							<em>Rivolto a</em>: scuole superiori.
-						</div>
-					</div>
-					<p>
-						Il progetto si propone di diffondere e incoraggiare la
-						conoscenza delle discipline legate al mondo
-						dell'informatica per le studentesse e gli studenti in
-						vista di un percorso di orientamento universitario
-						attraverso laboratori e seminari di divulgazione
-						dell’informatica.
-					</p>
-					<ul className="list-disc pl-10 py-2">
-						<li>
-							<ExternalA
-								href="https://laurea.informatica.unito.it/do/home.pl/View?doc=Orientamento.html"
-								className="inline-block"
-							>
-								Laboratori per le studentesse e gli studenti del
-								triennio delle scuole superiori
-							</ExternalA>
-						</li>
-						<li>
-							<ExternalA
-								href="https://www.facebook.com/150032391693082/videos/180929123979469"
-								className="inline-block"
-							>
-								Parlano le nostre studentesse e i nostri
-								studenti Corso di Laurea in Informatica
-							</ExternalA>{" "}
-							<span>
-								(video realizzato con i fondi del Progetto
-								Lauree Scientifiche 2019/20).
-							</span>
-						</li>
-					</ul>
-				</>
-			</Section>
-
-			<Section
-				title="Laboratori e incontri per la Scuola Secondaria di Secondo
-					Grado"
-				src="/perScuole/laboratori.jpeg"
-			>
-				<ul className="list-disc pl-10 ">
-					<li>
-						3°Ed Ottobre:{" "}
-						<strong>Python, è tutto un programma!</strong>
-					</li>
-					<li>
-						2°Ed:{" "}
-						<strong>
-							Sviluppo di Un Recommender System in Python
-						</strong>
-					</li>
-				</ul>
-			</Section>
-
-			<Section
-				title="Alternanza Scuola-Lavoro"
-				src="/perScuole/alternanza.jpeg"
-			>
-				<>
-					<div className="pb-2">
-						<div>
-							<em>Rivolto a</em>: scuole superiori.
-						</div>
-					</div>
-					<p>In questi progetti le studentesse e gli studenti:</p>
-
-					<ul className="list-disc pl-10 py-2">
-						<li>
-							hanno partecipato a laboratori per imparare a creare
-							il proprio sito web
-						</li>
-						<li>
-							sono state/i integrate/i in progetti di ricerca del
-							Dipartimento (come{" "}
-							<ExternalA
-								href={"https://ontomap.eu/"}
-								className="inline-block"
-							>
-								OntoMap
-							</ExternalA>{" "}
-							un progetto sui social media e l'analisi dei
-							sentimenti nel testo)
-						</li>
-					</ul>
-				</>
-			</Section>
-			<Section title="Convenzioni con Istituzioni e Associazioni">
-				<>
-					<ul className="list-disc pl-10 ">
-						<li>
-							<strong>Città di Torino</strong> per il progetto
-							Scuola 2.0 per l'informatizzazione strutturata della
-							rete scolastica primaria e secondaria di primo grado
-							e per l'avvio di metodologie didattiche Innovative.
-						</li>
-						<li>
-							<strong>
-								Ufficio Scolastico Regionale per il Piemonte
-							</strong>{" "}
-							(USR Piemonte) per l'aggiornamento delle competenze
-							informatiche degli insegnanti della Scuola Pubblica
-						</li>
-						<li>
-							<strong>
-								Associazione Magistrale Nicolò Tommaseo
-							</strong>
-						</li>
-					</ul>
-				</>
-			</Section>
-		</div>
-	);
-}
-
-function Section({
-	title,
-	src,
-	classNameImg,
-	children,
-}: {
-	title: string | JSX.Element;
-	src?: string;
-	classNameImg?: string;
-} & PropsWithChildren) {
-	return (
-		<div className="flex flex-col gap-4 py-10">
-			<div>
-				<Title>{title}</Title>
-
-				<p className="pt-2">{children}</p>
+			<div className="flex  pb-10">
+				<Link
+					to="iniziative"
+					className="relative border-2 w-[50%] rounded-l-2xl overflow-hidden bg-center h-[40vh] bg-[url(https://media.istockphoto.com/id/1409722748/it/foto/studenti-che-alzano-la-mano-mentre-linsegnante-fa-loro-domande-in-classe.jpg?s=612x612&w=0&k=20&c=OTqJ6W0_nbacXu6HGzRwIQrNGA4x7M4-KcZL6y3R8Hk=)] bg-cover text-white  border-gray-300  p-10 shadow-md hover:bg-gray-100 transition-all  flex items-center justify-center text-2xl font-semibold	"
+				>
+					<h3 className="z-10 text-4xl font-bold">Iniziative</h3>
+					<div className="bg-black opacity-50 absolute w-full h-full hover:opacity-30 transition-all"></div>
+				</Link>
+				<Link
+					to="attivita"
+					className="relative border-2 max-w-[50%] rounded-r-2xl overflow-hidden   flex-1 h-[40vh]  bg-[url(https://media.istockphoto.com/id/610771616/it/foto/diverse-studentesse-lavorano-insieme-al-progetto-scientifico.jpg?s=612x612&w=0&k=20&c=Dk89iZosr6RoWyyiNIIqAno4kdSQpridcyPu6oe-uDU=)] bg-cover text-white  border-gray-300  p-10 shadow-md hover:bg-gray-100 transition-all  flex items-center justify-center text-2xl font-semibold	"
+				>
+					<h3 className="z-10 text-4xl font-bold">Attività</h3>
+					<div className="bg-black opacity-50 absolute w-full h-full hover:opacity-30 transition-all"></div>
+				</Link>
 			</div>
-			{src ? (
-				<img
-					src={src}
-					alt={"immagine sezione " + title}
-					className={cn(
-						"rounded-xl w-full mx-auto h-80 object-cover border-2 border-gray-300",
-						classNameImg ?? ""
-					)}
-				/>
-			) : null}
 		</div>
 	);
 }

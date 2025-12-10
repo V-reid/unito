@@ -6,7 +6,7 @@ export default function BackButton() {
 	const navigate = useNavigate();
 	return (
 		<ArrowLeft
-			tabIndex={0}
+			tabIndex={-1}
 			onKeyDown={(v) => {
 				if (v.key == " " || v.key == "Enter") navigate(-1);
 			}}

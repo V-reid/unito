@@ -8,7 +8,7 @@ export default function MainLayout() {
 	return (
 		<div>
 			<Header />
-			<main>
+			<main id="main-content">
 				<motion.div
 					key={location.pathname}
 					initial={{ y: 20, opacity: 0 }}

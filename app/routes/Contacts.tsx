@@ -28,49 +28,54 @@ export default function Example() {
 	const [subject, setSubject] = useState<string | undefined>(undefined);
 	const [text, setText] = useState<string | undefined>(undefined);
 	return (
-		<div className="relative isolate bg-gray-900">
-			<div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
-				<div className="relative px-6 pb-0 pt-12  lg:static lg:px-8 lg:pt-24">
+		<div className="relative isolate bg-gray-900 ">
+			<div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2 ">
+				<div className="relative px-6 pb-0 pt-12  lg:static lg:px-8 lg:pt-24 bg-white rounded-br-xl">
 					<div className="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
 						<div className="absolute inset-y-0 left-0 -z-10 w-full overflow-hidden rounded-br-xl ring-1  lg:w-1/2 bg-white ring-white/10"></div>
 						<h2 className="text-pretty text-4xl font-semibold tracking-tight  sm:text-5xl text-slate-900">
 							Contatta il Dipartimento di Informatica
 						</h2>
-						<p className="mt-6 text-lg/8  text-black">
+						<div className="mt-6 text-lg/8  text-black">
 							Che tu sia un futuro studente, un'azienda o un
 							ricercatore, siamo qui per rispondere alle tue
 							domande su ammissioni, progetti di ricerca e
 							partnership. Ti invitiamo a compilare il modulo per
 							la richiesta di informazioni.
-						</p>
-						<dl className="mt-10 space-y-4 text-base/7 text-slate-800 pb-10">
+						</div>
+						<ul className="mt-10 space-y-4 text-base/7 text-slate-800 pb-10 list-none">
 							{info.map((x) => (
-								<a
-									className="flex gap-x-4 underline text-blue-600"
-									href={x.href}
-								>
-									<dt className="flex-none">
-										<span className="sr-only opacity-0">
-											{x.title}
-										</span>
-										<x.icon
-											aria-hidden="true"
-											className="h-7 w-6 text-slate-800"
-										/>
-									</dt>
-									<dd>{x.value}</dd>
-								</a>
+								<li key={x.title}>
+									<a
+										className="flex gap-x-4 underline text-blue-600"
+										href={x.href}
+									>
+										<div className="flex-none">
+											<span className="sr-only opacity-0">
+												{x.title}
+											</span>
+											<x.icon
+												aria-hidden="true"
+												className="h-7 w-6 text-slate-800"
+											/>
+										</div>
+										<div>{x.value}</div>
+									</a>
+								</li>
 							))}
-							<a
-								href="/#ricercatori"
-								className="flex gap-4 items-center"
-							>
-								<User />
-								<div className="underline text-blue-600">
-									Contatta i nostri ricercatori
-								</div>
-							</a>
-						</dl>
+							<li>
+								<a
+								
+									href="/#ricercatori"
+									className="flex gap-4 items-center"
+								>
+									<User />
+									<div className="underline text-blue-600">
+										Contatta i nostri ricercatori
+									</div>
+								</a>
+							</li>
+						</ul>
 					</div>
 				</div>
 				<form
@@ -95,7 +100,7 @@ export default function Example() {
 										onChange={(v) =>
 											setSubject(v.target.value)
 										}
-										className="block w-full rounded-md  px-3.5 py-2 text-base  -outline-offset-1  focus:-outline-offset-2 focus:outline-primary-600 bg-white/5 text-white outline-white/10 placeholder:text-gray-600 focus:outline-primary-500"
+										className="block w-full rounded-md  px-3.5 py-2 text-base  -outline-offset-1  focus:-outline-offset-2 focus:outline-primary-600 bg-slate-800 text-white outline-white/10 placeholder:text-gray-600 focus:outline-primary-500"
 									/>
 								</div>
 							</div>
@@ -115,7 +120,7 @@ export default function Example() {
 										onChange={(v) =>
 											setText(v.target.value)
 										}
-										className="block w-full rounded-md  px-3.5 py-2 text-base -outline-offset-1  focus:-outline-offset-2 focus:outline-primary-600 bg-white/5 text-white outline-white/10 placeholder:text-gray-500 focus:outline-primary-500"
+										className="block w-full rounded-md  px-3.5 py-2 text-base -outline-offset-1  focus:-outline-offset-2 focus:outline-primary-600 bg-slate-800 text-white outline-white/10 placeholder:text-gray-500 focus:outline-primary-500"
 										defaultValue={""}
 									/>
 								</div>
@@ -127,7 +132,7 @@ export default function Example() {
 								className={cn(
 									text && subject
 										? ""
-										: "pointer-events-none opacity-50 cursor-not-allowed ",
+										: "pointer-events-none opacity-70 cursor-not-allowed ",
 									"rounded-md bg-primary-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-primary  focus-visible:outline-offset-2 focus-visible:outline-primary-600 bg-primary hover:bg-primary-400 focus-visible:outline-primary-500"
 								)}
 							>

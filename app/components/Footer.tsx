@@ -2,49 +2,51 @@ import { Facebook, Instagram, Linkedin, Twitter, Youtube } from "lucide-react";
 import Logo from "./Logo";
 
 const navigation = {
-	solutions: [
-		{ name: "Marketing", href: "#" },
-		{ name: "Analytics", href: "#" },
-		{ name: "Automation", href: "#" },
-		{ name: "Commerce", href: "#" },
-		{ name: "Insights", href: "#" },
-	],
-
 	amministrazione: [
-		{ name: "Accessibilità", href: "#" },
-		{ name: "Segreteria Didattica", href: "#" },
-		{ name: "Helpdesk Studenti", href: "#" },
-		{ name: "Webmaster", href: "#" },
+		{
+			name: "Accessibilità",
+			href: "https://www.unito.it/servizi/servizi-online/guida-alluso-del-portale/accessibilita",
+		},
+		{
+			name: "Segreteria Didattica",
+			href: "https://informatica.unito.it/do/home.pl/View?doc=/servizi/servizi_per_studenti_e_didattica.html&tab=1#management",
+		},
+		{
+			name: "Helpdesk Studenti",
+			href: "https://wwwold.educ.di.unito.it/helpdesk/",
+		},
+		{
+			name: "Webmaster",
+			href: "https://informatica.unito.it/do/home.pl/Webmanager",
+		},
 	],
 	legale: [
-		{ name: "Privacy e Cookie Policy", href: "#" },
-		{ name: "Note Legali", href: "#" },
+		{
+			name: "Privacy e Cookie Policy",
+			href: "https://www.unito.it/ateneo/privacy",
+		},
+		{ name: "Note Legali", href: "https://www.unito.it/note-legali" },
 	],
 	social: [
 		{
 			name: "Facebook",
-			href: "#",
+			href: "https://www.facebook.com/diunito",
 			icon: () => <Facebook />,
 		},
 		{
 			name: "Instagram",
-			href: "#",
+			href: "https://www.instagram.com/diunito/",
 			icon: () => <Instagram />,
 		},
 		{
 			name: "X",
-			href: "#",
+			href: "https://x.com/diunito",
 			icon: () => <Twitter />,
 		},
 		{
 			name: "YouTube",
-			href: "#",
+			href: "https://www.youtube.com/user/diunito",
 			icon: () => <Youtube />,
-		},
-		{
-			name: "Linkedin",
-			href: "#",
-			icon: () => <Linkedin />,
 		},
 	],
 };
@@ -144,7 +146,8 @@ export default function Example() {
 				</div>
 				<div className="mt-16 border-t  pt-8 sm:mt-20 lg:mt-24 border-white/10">
 					<p className="text-sm/6  text-gray-300">
-						&copy; 2024 Unito, Tutti i diritti riservati
+						&copy; 2025 Unito, Tutti i diritti riservati Daniele
+						Venere, Carlotta Zecchin, Sara Zunino
 					</p>
 				</div>
 			</div>

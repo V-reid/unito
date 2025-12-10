@@ -6,6 +6,7 @@ import { Link, useNavigate } from "react-router";
 import { ArrowLeft, ArrowRight, Mail, Phone, Plus, Send } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "~/ui/tooltip";
 import { Button } from "~/ui/button";
+import SectionTitle from "~/components/SectionTitle";
 
 export function meta({}: Route.MetaArgs) {
 	return [
@@ -20,12 +21,11 @@ export default function Home() {
 	return (
 		<>
 			<Hero />
-			<div>
-				<News />
-			</div>
-			<div>
-				<People />
-			</div>
+
+			<News />
+
+			<People />
+
 			<Logos />
 		</>
 	);
@@ -47,23 +47,7 @@ function Hero() {
 
 					<div className="relative px-6 py-32 sm:py-40 lg:px-8 lg:py-30 lg:pr-0">
 						<div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl">
-							{/* <div className="hidden sm:mb-10 sm:flex">
-								<div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-500 ring-1 ring-gray-900/10 hover:ring-gray-900/20 dark:text-gray-400 dark:ring-white/10 dark:hover:ring-white/20">
-									Anim aute id magna aliqua ad ad non deserunt
-									sunt.{" "}
-									<a
-										href="#"
-										className="whitespace-nowrap font-semibold text-indigo-600 dark:text-indigo-400"
-									>
-										<span
-											aria-hidden="true"
-											className="absolute inset-0"
-										/>
-										Read more{" "}
-										<span aria-hidden="true">&rarr;</span>
-									</a>
-								</div>
-							</div> */}
+							
 							<h1 className="text-pretty text-5xl font-semibold tracking-tight text-gray-900 sm:text-5xl dark:text-white">
 								Costruiamo ponti tra{" "}
 								<span className="text-primary">Università</span>{" "}
@@ -92,10 +76,8 @@ function Hero() {
 
 function People() {
 	return (
-		<div className=" p-20 flex flex-col gap-5 ">
-			<div className="border-primary text-md w-fit  border-l-2 px-2 font-bold">
-				I nostri ricercatori
-			</div>
+		<div className=" px-20 py-10 flex flex-col gap-5 ">
+			<SectionTitle>I nostri ricercatori</SectionTitle>
 			<div className="flex flex-col gap-4">
 				<p className=" flex-1">
 					Tutte le attività proposte dal nostro dipartimento sono
@@ -110,6 +92,7 @@ function People() {
 					<Tooltip>
 						<TooltipTrigger asChild>
 							<a
+								aria-label="Contatta tutti i ricercatori"
 								href={
 									"mailto:" +
 									professors.map((x) => x.mail).join(";")
@@ -156,7 +139,7 @@ function Person({ person: x }: { person: ProfType }) {
 			<TooltipTrigger asChild>
 				<Link
 					to={"/professore/" + x.id}
-					className="relative -mr-2 hover:z-10 hover:scale-110 active:scale-95 focus:z-10 focus:scale-110 transition-all cursor-pointer"
+					className="relative -mr-2 hover:z-10 hover:scale-105 rounded-full focus:outline-offset-2 active:scale-95 focus:z-10 focus:scale-110 transition-all cursor-pointer"
 					onMouseEnter={() => setHover(true)}
 					onMouseLeave={() => setHover(false)}
 				>
@@ -170,7 +153,7 @@ function Person({ person: x }: { person: ProfType }) {
 			</TooltipTrigger>
 			<TooltipContent
 				side="bottom"
-				className="bg-white flex flex-col items-center mb-5 border-b-2 border-primary"
+				className="bg-white flex flex-col rounded-t-xl  items-center mb-5 mt-1 border-b-2 border-primary"
 			>
 				<div className="text-lg capitalize">{x.name}</div>
 				<div className="text-md capitalize">{x.title}</div>
@@ -182,9 +165,7 @@ function Person({ person: x }: { person: ProfType }) {
 function News() {
 	return (
 		<div className="py-10 px-20 flex flex-col gap-4">
-			<div className="border-primary text-md w-fit  border-l-2 px-2 font-bold">
-				Ultime Notizie
-			</div>
+			<SectionTitle>Ultime Notizie</SectionTitle>
 			<div className="flex gap-4   mx-auto ">
 				{news.map((x) => (
 					<SingleNews news={x} key={x.title + "_news"} />
@@ -224,7 +205,10 @@ export function SingleNews({
 			<div className="z-10 px-2 py-2 h-15">
 				<div className="flex gap-2 items-center flex-wrap">
 					{news.tags.map((tag) => (
-						<div className="rounded-full bg-primary-700  text-white w-fit px-2 py-0.5 text-xs font-bold grid">
+						<div
+							key={news.title + tag}
+							className="rounded-full bg-primary-700  text-white w-fit px-2 py-0.5 text-xs font-bold grid"
+						>
 							{tag}
 						</div>
 					))}
@@ -243,7 +227,7 @@ export function SingleNews({
 			></div>
 			<div className="flex-1 flex flex-col gap-2 px-5 py-3 z-1 text-white justify-between">
 				<div>
-					<h3 className="text-lg font-bold pb-5">{news.title}</h3>
+					<h2 className="text-lg font-bold pb-5">{news.title}</h2>
 					<div className="text-sm ">{news.summary}</div>
 				</div>
 				<div className="text-sm text-white">
@@ -257,31 +241,28 @@ export function SingleNews({
 function Logos() {
 	return (
 		<div className=" p-20 flex flex-col gap-5 ">
-			<div className="border-primary text-md w-fit  border-l-2 px-2 font-bold">
-				Affiliazioni
-			</div>
+			<SectionTitle>Affiliazioni</SectionTitle>
 			<div className="flex">
 				{/* <p className="flex-1 w-full bg-red-400">ciao</p> */}
 				<div className="mx-auto  grid grid-cols-4 flex-1 w-full items-center justify-center   ">
 					{logos.map((x) => (
-						<>
-							<a
-								href={x.href}
-								className={cn(
-									"transition-all flex bg-white/5 cursor-pointer bg-red-300  w-fit mx-auto justify-center ring-gray-400 rounded-sm flex-1 ",
-									x.classNames
-								)}
-							>
-								<img
-									alt={x.alt}
-									src={x.src}
-									// width={158}
-									// height={48}
-									className="h-20  object-contain"
-								/>
-								{/* <h3 className="w-fit mx-auto ">{x.title}</h3> */}
-							</a>
-						</>
+						<a
+							key={x.title + "logos"}
+							href={x.href}
+							className={cn(
+								"transition-all hover:scale-105 flex bg-white/5 cursor-pointer bg-red-300  w-fit mx-auto justify-center ring-gray-400 rounded-sm flex-1 ",
+								x.classNames
+							)}
+						>
+							<img
+								alt={x.alt}
+								src={x.src}
+								// width={158}
+								// height={48}
+								className="h-20  object-contain"
+							/>
+							{/* <h3 className="w-fit mx-auto ">{x.title}</h3> */}
+						</a>
 					))}
 				</div>
 			</div>

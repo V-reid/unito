@@ -7,6 +7,7 @@ export default function ProfLinks({ prof }: { prof: ProfType[] }) {
 		<div className="flex gap-2 pt-2">
 			{prof.map((x) => (
 				<Link
+					key={x.id}
 					to={"/professore/" + x.id}
 					className="hover:scale-105 shadow-sm border-[1px] border-gray-300 transition-all flex items-center gap-1 rounded-full  justify-between bg-slate-200  w-fit"
 				>

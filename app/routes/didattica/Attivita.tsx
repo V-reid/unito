@@ -17,7 +17,7 @@ const items = {
 		items: [
 			{
 				title: "Informaticasenzapc",
-				img: "./didattica.jpeg",
+				img: "/didattica.jpeg",
 				alt: "Informaticasenzapc",
 				description: (
 					<div>
@@ -30,7 +30,7 @@ const items = {
 					</div>
 				),
 				content: (
-					<div>
+					<p>
 						Lo scopo di questo progetto è promuovere l’insegnamento
 						di alcuni concetti fondamentali dell’informatica come
 						scienza attraverso attività “unplugged”, ovvero senza il
@@ -45,14 +45,14 @@ const items = {
 							CIRDA
 						</ExternalA>{" "}
 						.
-					</div>
+					</p>
 				),
 				linkText: "Sito ufficiale",
 				linkHref: "https://informaticasenzapc.di.unito.it/",
 			},
 			{
 				title: "Teachers4Teachers",
-				img: "./uni.png",
+				img: "/uni.png",
 				alt: "Teacher4Teacher",
 				description: (
 					<div>
@@ -69,7 +69,7 @@ const items = {
 					</div>
 				),
 				content: (
-					<div>
+					<p>
 						{/* <ExternalA href="http://www.di.unito.it/do/home.pl/View?doc=Public_engagement.html">
 							Commissione Orientamento e Informatica nelle Scuole.
 						</ExternalA> */}
@@ -82,7 +82,7 @@ const items = {
 							regionale del Ministero dell'Istruzione,
 							dell'Università e della Ricerca.
 						</span>
-					</div>
+					</p>
 				),
 				linkText: "Appuntamento del " + new Date().getFullYear(),
 				linkHref: "https://scienzamigrante.unito.it/",
@@ -107,7 +107,7 @@ const items = {
 				),
 				alt: "immagine di Wolly il robot educativo del Dipartimento di Informatica",
 				content: (
-					<div>
+					<p>
 						Il{" "}
 						<ExternalA
 							href="https://youtu.be/GeqeAl4vIxE"
@@ -133,7 +133,7 @@ const items = {
 						</ExternalA>{" "}
 						con dei corsi di informatica, coding e robotica
 						educativa per i docenti, ma non solo!
-					</div>
+					</p>
 				),
 				linkText: "Incontra Wolly",
 				linkHref: "https://wolly.di.unito.it/",
@@ -193,15 +193,6 @@ const items = {
 	},
 };
 
-type ElementType = {
-	title: string;
-	img: string;
-	alt: string;
-	description: JSX.Element;
-	content: JSX.Element;
-	linkText: string;
-	linkHref: string;
-}[];
 export default function Attivita() {
 	const [obj, setObj] = useState<
 		Omit<ModalType, "open" | "setIsOpen"> | undefined
@@ -209,12 +200,10 @@ export default function Attivita() {
 
 	const [open, setIsOpen] = useState(false);
 
-	// console.log(!!defaultOpen);
-
 	return (
 		<div className="p-10 relative flex flex-col gap-10 max-w-4xl mx-auto pt-20">
 			<PageIntro title="Attività">
-				<div className="font-[Helvetica]">
+				<p className="font-[Helvetica]">
 					Come parte delle loro ricerche, i nostri ricercatori e
 					ricercatrici hanno ideato delle attività didattiche rivolte
 					a studenti e insegnanti delle scuole primarie e secondarie.
@@ -222,14 +211,17 @@ export default function Attivita() {
 					materiali necessari per intraprendere queste attività,
 					divise per categorie, in modo da approfondire e migliorare
 					l’insegnamento dell’informatica.
-				</div>
+				</p>
 			</PageIntro>
 			{Object.values(items).map((x) => (
-				<div className="py-2">
+				<div className="py-2" key={x.title + "attivita"}>
 					<Title>{x.title}</Title>
 					<div className="grid grid-cols-2 gap-5 place-items-center w-fit  ">
 						{x.items.map((x) => (
-							<div className="h-80 aspect-square">
+							<div
+								className="h-80 aspect-square"
+								key={x.title.toString()}
+							>
 								<ModalCard
 									key={x.title.toString()}
 									onClick={() => {

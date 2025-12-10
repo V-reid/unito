@@ -24,7 +24,7 @@ const items: {
 		items: [
 			{
 				title: "Convenzione Quercetti - Dipartimento di Informatica",
-				img: "./progetti/pallino1.jpeg",
+				img: "/progetti/pallino1.jpeg",
 				alt: "bambino che compone parole con blochhi di lettere",
 				description: (
 					<div>
@@ -67,7 +67,7 @@ const items: {
 		items: [
 			{
 				title: "Sugar, Salt & Pepper - La robotica umanoide per l’autismo",
-				img: "./progetti/pepper.jpeg",
+				img: "/progetti/pepper.jpeg",
 				description: (
 					<div>
 						<em>Responsabile</em>:{" "}
@@ -113,7 +113,7 @@ const items: {
 			},
 			{
 				title: "Social Assistive Robotics for Autistic Childrens",
-				img: "./progetti/neo.jpeg",
+				img: "/progetti/neo.jpeg",
 				description: (
 					<div>
 						<em>Responsabile</em>:{" "}
@@ -136,7 +136,7 @@ const items: {
 		items: [
 			{
 				title: "Convenzione tra il Comune di Torino e l’Università di Torino",
-				img: "./progetti/convenzione.jpeg",
+				img: "/progetti/convenzione.jpeg",
 				description: (
 					<div>
 						<em>Responsabile</em>:{" "}
@@ -153,7 +153,7 @@ const items: {
 			},
 			{
 				title: "Studio e Analisi di usabilità per il progetto ”RightTVforKids”",
-				img: "./progetti/tvForKids.jpeg",
+				img: "/progetti/tvForKids.jpeg",
 				description: (
 					<div>
 						<em>Responsabile</em>:{" "}
@@ -170,7 +170,7 @@ const items: {
 			},
 			{
 				title: "Pensiero Computazionale e Creatività Digitale",
-				img: "./progetti/computazionale.jpeg",
+				img: "/progetti/computazionale.jpeg",
 				description: (
 					<div>
 						<em>Responsabile</em>:{" "}
@@ -187,7 +187,7 @@ const items: {
 			},
 			{
 				title: "Passport.Unito",
-				img: "./progetti/passport.jpeg",
+				img: "/progetti/passport.jpeg",
 				description: (
 					<div>
 						<em>Responsabile</em>:{" "}
@@ -218,7 +218,7 @@ const items: {
 			},
 			{
 				title: "Collaborazione Banca d'Italia - Dipartimento di Informatica",
-				img: "./progetti/banca.jpeg",
+				img: "/progetti/banca.jpeg",
 				description: (
 					<div>
 						<em>Responsabile</em>:{" "}
@@ -293,24 +293,25 @@ export default function Progetti() {
 					.
 				</>
 			</PageIntro>
-			{Object.values(items).map((x) => (
-				<div className="py-2">
+			{Object.values(items).map((x, i) => (
+				<div className="py-2" key={i + "progetti"}>
 					<Title>{x.title}</Title>
 					<div className="grid grid-cols-2 gap-5 place-items-center w-fit  ">
-						{x.items.map((x) => (
-							<>
-								<div className="h-80 aspect-square ">
-									<ModalCard
-										key={x.title.toString()}
-										onClick={() => {
-											setObj(x);
-											setIsOpen(true);
-										}}
-										setObj={setObj}
-										{...x}
-									/>
-								</div>
-							</>
+						{x.items.map((item, j) => (
+							<div
+								className="h-80 aspect-square "
+								key={i + "progetti" + j}
+							>
+								<ModalCard
+									key={item.title.toString()}
+									onClick={() => {
+										setObj(item);
+										setIsOpen(true);
+									}}
+									setObj={setObj}
+									{...item}
+								/>
+							</div>
 						))}
 					</div>
 				</div>

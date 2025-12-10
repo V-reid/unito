@@ -16,7 +16,7 @@ export default function SearchBar() {
 				placeholder="Cerca..."
 				value={searchQuery}
 				onChange={(e) => setSearchQuery(e.target.value)}
-				className="pl-10 bg-white rounded-xl"
+				className="pl-10 bg-white rounded-xl border-gray-300"
 			/>
 		</div>
 	);

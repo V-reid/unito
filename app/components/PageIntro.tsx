@@ -9,7 +9,7 @@ export default function PageIntro({
 	return (
 		<div className="flex flex-col gap-2">
 			<h2 className="text-4xl font-bold">{title}</h2>
-			<p>{children}</p>
+			<div>{children}</div>
 		</div>
 	);
 }

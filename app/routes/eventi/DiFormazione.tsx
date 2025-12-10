@@ -23,25 +23,27 @@ const items: Omit<ModalType, "open" | "setIsOpen">[] = [
 export default function DiFormazione() {
 	return (
 		<div className="p-10 relative flex flex-col gap-10 max-w-4xl mx-auto pt-20">
-			<PageIntro title="Eventi di Formazione">
-				Questa sezione raccoglie gli eventi di formazione a cui il
+			<PageIntro title="Competizioni Informatiche">
+				Questa sezione raccoglie le competizioni Informatiche a cui il
 				Dipartimento di Informatica partecipa. Qui trovi attività e
 				percorsi pensati per migliorare le tue competenze, lavorare in
 				squadra e metterti alla prova con sfide pratiche.
 			</PageIntro>
 			<Section
-				title="CYBERCHALLENGE.IT"
+				title="CyberChallenge.IT"
 				src="/formazione/cyberchallenge.jpeg"
 			>
 				<>
 					<div className="pb-3">
 						<div>
 							<em>Pagina ufficiale</em>:{" "}
-							<ExternalA href="">cyberchallenge.it</ExternalA>
+							<ExternalA href="https://cyberchallenge.it">
+								CyberChallenge.IT
+							</ExternalA>
 						</div>
 					</div>
 					<p>
-						Cyberchallenge.IT è un programma di formazione per
+						CyberChallenge.IT è un programma di formazione per
 						giovani talenti, nato per avvicinare ragazze e ragazzi
 						tra i 16 e i 24 anni ai temi della cybersecurity.
 						Partecipando a un'emozionante gara, sia individuale che
@@ -53,7 +55,7 @@ export default function DiFormazione() {
 						quindi, quello di incoraggiare le/gli studenti a
 						diventare i futuri professionisti della cybersecurity.
 						L'Università di Torino partecipa per il secondo anno
-						consecutivo a CyberChallenge.it. Un corso di formazione
+						consecutivo a CyberChallenge.IT. Un corso di formazione
 						viene organizzato per gli/le studenti che intendono
 						partecipare alla gara. Le lezioni si svolgeranno presso
 						la sede del Dipartimento di Informatica, in via
@@ -94,8 +96,8 @@ export default function DiFormazione() {
 											</li>
 											<li>
 												<TitleDescr title="Lezioni e esercitazioni">
-													febbraio - maggio 2025 |{" "}
-													<ExternalA href="">
+													Febbraio - maggio 2025 |{" "}
+													<ExternalA href="https://cyberchallenge.it/venues/unito">
 														Sede Torino e Calendario
 													</ExternalA>
 												</TitleDescr>
@@ -201,7 +203,9 @@ export default function DiFormazione() {
 					<div className="pb-3">
 						<div>
 							<em>Pagina ufficiale</em>:{" "}
-							<ExternalA href="">SWERC</ExternalA>
+							<ExternalA href="https://swerc.eu/2023/">
+								SWERC
+							</ExternalA>
 						</div>
 					</div>
 					<p>
@@ -214,45 +218,47 @@ export default function DiFormazione() {
 						Svizzera, nonché da Andorra, Liechtenstein, San Marino e
 						Città del Vaticano. Funge da fase di selezione regionale
 						per l'International Collegiate Programming Contest (
-						<ExternalA href="">ICPC</ExternalA>): le squadre
-						vincitrici di SWERC si qualificano alle finali mondiali
-						ICPC per competere con squadre provenienti da tutto il
-						mondo. Con più di 50 anni di storia, ICPC è la più
-						importante competizione globale dedicata alla
-						programmazione, condotta da e per università distribuite
-						in tutto il mondo. Essa promuove l'utilizzo di
-						creatività, lavoro in team, e innovazione nello sviluppo
-						e nella programmazione di nuovi software, e consente
-						agli/alle studenti di mettere alla prova le loro
-						capacità anche in situazioni che superano la propria
-						zona di comfort. Nel corso delle scorse edizioni, la
-						gara, sin dalle sue fasi regionali, ha visto la
-						partecipazione di più di 50.000 dei/delle migliori
-						studenti in discipline informatiche, provenienti da più
-						di 3.000 università nel mondo. Dal 2021 l'Università di
-						Torino prende parte annualmente a SWERC, con impegno e
-						successo. Un corso di preparazione e selezione della
-						squadra viene organizzato presso il Dipartimento di
-						Informatica, e ad esso possono partecipare tutti gli/le
-						studenti interessati/e, anche di altri Dipartimenti
-						UNITO. Il corso è al via anche per l'edizione di
-						quest'anno.
+						<ExternalA href="https://icpc.global/">ICPC</ExternalA>
+						): le squadre vincitrici di SWERC si qualificano alle
+						finali mondiali ICPC per competere con squadre
+						provenienti da tutto il mondo. Con più di 50 anni di
+						storia, ICPC è la più importante competizione globale
+						dedicata alla programmazione, condotta da e per
+						università distribuite in tutto il mondo. Essa promuove
+						l'utilizzo di creatività, lavoro in team, e innovazione
+						nello sviluppo e nella programmazione di nuovi software,
+						e consente agli/alle studenti di mettere alla prova le
+						loro capacità anche in situazioni che superano la
+						propria zona di comfort. Nel corso delle scorse
+						edizioni, la gara, sin dalle sue fasi regionali, ha
+						visto la partecipazione di più di 50.000 dei/delle
+						migliori studenti in discipline informatiche,
+						provenienti da più di 3.000 università nel mondo. Dal
+						2021 l'Università di Torino prende parte annualmente a
+						SWERC, con impegno e successo. Un corso di preparazione
+						e selezione della squadra viene organizzato presso il
+						Dipartimento di Informatica, e ad esso possono
+						partecipare tutti gli/le studenti interessati/e, anche
+						di altri Dipartimenti UNITO. Il corso è al via anche per
+						l'edizione di quest'anno.
 					</p>
 					<div className="flex flex-col gap-5 pt-10">
 						<CardInfo
 							title={<div>Iscrizione</div>}
 							content={
 								<div className=" gap-2 -mt-5">
-									<span>Accedi alla</span>{" "}
-									<ExternalA href="">moodle</ExternalA>{" "}
-									dedicata, qui puoi trovare tutti i dettagli
+									<span>Accedi al</span>{" "}
+									<ExternalA href="https://informatica.i-learn.unito.it/enrol/index.php?id=2764">
+										Moodle
+									</ExternalA>{" "}
+									dedicat, qui puoi trovare tutti i dettagli
 									di partecipazione. oppure contatta i
-									referenti del corso: Dott.
-									<ExternalA href="">
+									referenti del corso: Dott.{" "}
+									<ExternalA href="https://informatica.unito.it/do/docenti.pl/Show?_id=gaudrito#tab-profilo">
 										Giorgio Audrito
 									</ExternalA>
 									, Dott.{" "}
-									<ExternalA href="">
+									<ExternalA href="https://informatica.unito.it/do/docenti.pl/Show?_id=eamparor#tab-profilo">
 										Elvio Gilberto Amparore
 									</ExternalA>
 								</div>
@@ -264,7 +270,7 @@ export default function DiFormazione() {
 							title={<div>Riconoscimento CFU</div>}
 							content={
 								<div className="-mt-5">
-									La procedura di Riconoscimento CFU è
+									La procedura di riconoscimento CFU è
 									riferita agli/alle studenti iscritti/e ai
 									corsi di studio del Dipartimento di
 									Informatica. Per i corsi di Laurea in
@@ -349,7 +355,7 @@ function Section({
 					/>
 				) : null}
 
-				<p className="pt-2">{children}</p>
+				<div className="pt-2">{children}</div>
 			</div>
 		</div>
 	);

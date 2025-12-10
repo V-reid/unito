@@ -41,9 +41,21 @@ export default [
 
 		//Materiale Didattico
 		route("didattica-perLeScuole", "./routes/didattica/PerLeScuole.tsx"),
-		route("didattica-progetti", "./routes/didattica/Progetti.tsx"),
-		route("didattica-ricerca", "./routes/didattica/ProdottiRicerca.tsx"),
-		route("didattica-attivita", "./routes/didattica/Attivita.tsx"),
+		route(
+			"didattica-perLeScuole/iniziative",
+			"./routes/didattica/Iniziative.tsx"
+		),
+		route(
+			"didattica-perLeScuole/attivita",
+			"./routes/didattica/Attivita.tsx"
+		),
+		route("didattica-ricerca", "./routes/didattica/Ricerca.tsx"),
+		route("didattica-ricerca/progetti", "./routes/didattica/Progetti.tsx"),
+		route(
+			"didattica-ricerca/prodotti",
+			"./routes/didattica/ProdottiRicerca.tsx"
+		),
+		// route("didattica-attivita", "./routes/didattica/Attivita.tsx"),
 
 		//contatti
 		route("contatti", "./routes/Contacts.tsx"),

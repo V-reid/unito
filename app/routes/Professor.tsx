@@ -23,7 +23,7 @@ export default function Professor() {
 	const { img, name, title, mail, tel, didattica } = professor;
 	return (
 		<div className="p-10 relative flex flex-col gap-10 max-w-4xl mx-auto pt-20">
-			<BackButton />
+			{/* <BackButton /> */}
 			<div className="flex flex-col gap-3 justify-between">
 				<div className="flex gap-20">
 					<div className="flex items-start justify-start ">
@@ -70,7 +70,9 @@ export default function Professor() {
 			</div>
 			<div className="grid grid-cols-1 gap-2">
 				{didattica ? (
-					didattica?.map((x) => <DidatticaCard item={x} />)
+					didattica?.map((x) => (
+						<DidatticaCard key={x.name + x.href} item={x} />
+					))
 				) : (
 					<div>Nessun Insegnamento</div>
 				)}

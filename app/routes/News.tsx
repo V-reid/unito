@@ -2,6 +2,7 @@ import { useParams } from "react-router";
 import { news } from "~/lib/constant";
 import { SingleNews } from "./home";
 import BackButton from "~/components/BackButton";
+import SectionTitle from "~/components/SectionTitle";
 
 export default function News() {
 	const { id } = useParams();
@@ -19,15 +20,18 @@ export default function News() {
 	const { title, tags, image_url, date, full_article_content } = notizia;
 	return (
 		<div className="p-10 relative flex flex-col gap-10 max-w-4xl mx-auto pt-20">
-			<BackButton />
+			{/* <BackButton /> */}
 			<div className="flex flex-col gap-3">
-				<div className="border-primary text-md w-fit  border-l-2 px-2 font-bold h-fit">
+				<SectionTitle>
 					{new Date(date).toLocaleDateString("it-IT")}
-					<h2 className="text-xl font-bold">{notizia.title}</h2>
-				</div>
+					<div className="text-xl font-bold">{notizia.title}</div>
+				</SectionTitle>
 				<div className="flex gap-2 items-center flex-wrap">
 					{tags.map((tag: string) => (
-						<div className="rounded-full bg-primary-700  text-white w-fit px-2 py-0.5 text-xs font-bold grid">
+						<div
+							key={tag + id + "single News"}
+							className="rounded-full bg-primary-700  text-white w-fit px-2 py-0.5 text-xs font-bold grid"
+						>
 							{tag}
 						</div>
 					))}
@@ -46,9 +50,7 @@ export default function News() {
 				*/}
 			<div className=" ">{full_article_content}</div>
 			<div className="flex flex-col gap-3">
-				<div className="border-primary text-md w-fit  border-l-2 px-2 font-bold h-fit">
-					<h2 className="text-xl font-bold">Altre notizie</h2>
-				</div>
+				<SectionTitle>Altre notizie</SectionTitle>
 				<div className="grid grid-cols-3 gap-4   mx-auto ">
 					{news
 						.filter((x) => x.id != id)
