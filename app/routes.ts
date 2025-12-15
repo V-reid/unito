@@ -15,7 +15,18 @@ export default [
 			"eventi-divulgazioneScientifica",
 			"./routes/eventi/DivulgazioneScientifica.tsx"
 		),
-		route("eventi-diFormazione", "./routes/eventi/DiFormazione.tsx"),
+		route(
+			"eventi-competizioniInformatiche",
+			"./routes/eventi/CompetizioniInformatiche.tsx"
+		),
+		route(
+			"eventi-competizioniInformatiche/swerc",
+			"./routes/eventi/Swerc.tsx"
+		),
+		route(
+			"eventi-competizioniInformatiche/cyberchallenge",
+			"./routes/eventi/Cyberchallenge.tsx"
+		),
 		route("eventi-catalogo", "./routes/eventi/Catalogo.tsx"),
 		//orientamento
 		route(

@@ -258,7 +258,7 @@ export default function Progetti() {
 	>(undefined);
 
 	return (
-		<div className="p-10 relative flex flex-col gap-10 max-w-4xl mx-auto pt-20">
+		<div className="p-10 relative flex flex-col gap-10 max-w-4xl mx-auto pt-10">
 			<PageIntro title="Progetti">
 				<>
 					<div className="mb-5">

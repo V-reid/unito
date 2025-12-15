@@ -22,7 +22,7 @@ export const menuContent: {
 		items: [
 			{
 				title: "Competizioni Informatiche",
-				to: "/eventi-diFormazione",
+				to: "/eventi-competizioniInformatiche",
 				description:
 					"Eventi che mettono in gioco le abilità informatiche dei partecipanti",
 			},

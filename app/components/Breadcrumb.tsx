@@ -16,6 +16,7 @@ import {
 	type LinkType,
 	type MenuLink,
 } from "~/lib/constant";
+import { Home } from "lucide-react";
 
 export default function Breadcrumb() {
 	const location = useLocation();
@@ -42,6 +43,11 @@ export default function Breadcrumb() {
 		{ to: "/didattica-perLeScuole/iniziative", title: "Iniziative" },
 		{ to: "/didattica-ricerca/progetti", title: "Progetti" },
 		{ to: "/didattica-ricerca/prodotti", title: "Pubblicazioni" },
+		{ to: "/eventi-competizioniInformatiche/swerc", title: "SWERC" },
+		{
+			to: "/eventi-competizioniInformatiche/cyberchallenge",
+			title: "CyberChallenge.IT",
+		},
 	];
 
 	const middle = links.find(
@@ -56,18 +62,26 @@ export default function Breadcrumb() {
 			location.pathname.split("/").filter((x) => x != "")[1]
 	);
 
-	// console.log(location.pathname.split("/").filter((x) => x != ""));
+	console.log(location.pathname.split("/").filter((x) => x != ""));
 
 	return (
 		<div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
 			<UiBreadcrumb>
-				<BreadcrumbList>
+				<BreadcrumbList className="flex items-center">
 					<BreadcrumbItem>
-						<BreadcrumbLink href="/">Home</BreadcrumbLink>
+						<BreadcrumbLink
+							href="/"
+							className="hover:after:border-b  after:transition-all after:absolute relative after:w-full after:h-full after:top-0 after:border-gray-700"
+						>
+							<Home className="size-5 text-gray-800" />
+						</BreadcrumbLink>
 					</BreadcrumbItem>
 					<BreadcrumbSeparator />
 					<BreadcrumbItem>
-						<BreadcrumbLink href={middle?.to}>
+						<BreadcrumbLink
+							href={middle?.to}
+							className="hover:underline transition-all"
+						>
 							{middle?.title}
 						</BreadcrumbLink>
 					</BreadcrumbItem>
@@ -75,7 +89,10 @@ export default function Breadcrumb() {
 						<>
 							<BreadcrumbSeparator />
 							<BreadcrumbItem>
-								<BreadcrumbLink href={last?.to}>
+								<BreadcrumbLink
+									href={last?.to}
+									className="hover:underline transition-all"
+								>
 									{last?.title}
 								</BreadcrumbLink>
 							</BreadcrumbItem>

@@ -19,7 +19,7 @@ import { Label } from "~/ui/label";
 
 export default function LaureaTriennale() {
 	return (
-		<div className="p-10 relative flex flex-col gap-10 max-w-4xl mx-auto pt-20">
+		<div className="p-10 relative flex flex-col gap-10 max-w-4xl mx-auto pt-10">
 			<PageIntro title="Laurea Triennale">
 				<div className="flex gap-y-48 items-center gap-8">
 					<div className="w-full flex-1">
