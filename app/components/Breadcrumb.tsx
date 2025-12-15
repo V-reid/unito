@@ -62,7 +62,7 @@ export default function Breadcrumb() {
 			location.pathname.split("/").filter((x) => x != "")[1]
 	);
 
-	console.log(location.pathname.split("/").filter((x) => x != ""));
+	// console.log(location.pathname.split("/").filter((x) => x != ""));
 
 	return (
 		<div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">

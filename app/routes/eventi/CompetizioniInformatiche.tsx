@@ -33,7 +33,7 @@ export default function DiFormazione() {
 			<div className="flex  pb-10">
 				<Link
 					to="cyberchallenge"
-					className="relative border-2 w-[50%] rounded-l-2xl overflow-hidden bg-center h-[40vh] bg-[url(./cyberchallenge.webp)] bg-cover text-white  border-gray-300  p-10 shadow-md hover:bg-gray-100 transition-all  flex items-center justify-center text-2xl font-semibold	"
+					className="relative border-2 w-[50%] rounded-l-2xl overflow-hidden bg-center h-[40vh] bg-[url(/formazione/cyberchallenge.jpeg)] bg-cover text-white  border-gray-300  p-10 shadow-md hover:bg-gray-100 transition-all  flex items-center justify-center text-2xl font-semibold	"
 				>
 					<h3 className="z-10 text-4xl font-bold">
 						CyberChallenge.IT
