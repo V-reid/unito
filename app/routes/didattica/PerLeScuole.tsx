@@ -26,14 +26,14 @@ export default function PerLeScuole() {
 			<div className="flex  pb-10">
 				<Link
 					to="iniziative"
-					className="relative border-2 w-[50%] rounded-l-2xl overflow-hidden bg-center h-[40vh] bg-[url(https://media.istockphoto.com/id/1409722748/it/foto/studenti-che-alzano-la-mano-mentre-linsegnante-fa-loro-domande-in-classe.jpg?s=612x612&w=0&k=20&c=OTqJ6W0_nbacXu6HGzRwIQrNGA4x7M4-KcZL6y3R8Hk=)] bg-cover text-white  border-gray-300  p-10 shadow-md hover:bg-gray-100 transition-all  flex items-center justify-center text-2xl font-semibold	"
+					className="relative border-2 w-[50%] rounded-l-2xl overflow-hidden bg-center h-[40vh] bg-[url(/iniziative.jpg)] bg-cover text-white  border-gray-300  p-10 shadow-md hover:bg-gray-100 transition-all  flex items-center justify-center text-2xl font-semibold	"
 				>
 					<h3 className="z-10 text-4xl font-bold">Iniziative</h3>
 					<div className="bg-black opacity-50 absolute w-full h-full hover:opacity-30 transition-all"></div>
 				</Link>
 				<Link
 					to="attivita"
-					className="relative border-2 max-w-[50%] rounded-r-2xl overflow-hidden   flex-1 h-[40vh]  bg-[url(https://media.istockphoto.com/id/610771616/it/foto/diverse-studentesse-lavorano-insieme-al-progetto-scientifico.jpg?s=612x612&w=0&k=20&c=Dk89iZosr6RoWyyiNIIqAno4kdSQpridcyPu6oe-uDU=)] bg-cover text-white  border-gray-300  p-10 shadow-md hover:bg-gray-100 transition-all  flex items-center justify-center text-2xl font-semibold	"
+					className="relative border-2 max-w-[50%] rounded-r-2xl overflow-hidden   flex-1 h-[40vh]  bg-[url(/attivita.jpg)] bg-cover text-white  border-gray-300  p-10 shadow-md hover:bg-gray-100 transition-all  flex items-center justify-center text-2xl font-semibold	"
 				>
 					<h3 className="z-10 text-4xl font-bold">Attività</h3>
 					<div className="bg-black opacity-50 absolute w-full h-full hover:opacity-30 transition-all"></div>

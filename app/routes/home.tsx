@@ -1,12 +1,14 @@
 import { logos, news, professors, type ProfType } from "~/lib/constant";
 import type { Route } from "./+types/home";
 import { cn } from "~/utils";
-import { useState } from "react";
+import { use, useState } from "react";
 import { Link, useNavigate } from "react-router";
 import { ArrowLeft, ArrowRight, Mail, Phone, Plus, Send } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "~/ui/tooltip";
 import { Button } from "~/ui/button";
 import SectionTitle from "~/components/SectionTitle";
+import { Input } from "~/ui/input";
+import SearchBar from "~/components/SerachBar";
 
 export function meta({}: Route.MetaArgs) {
 	return [
@@ -47,7 +49,6 @@ function Hero() {
 
 					<div className="relative px-6 py-32 sm:py-40 lg:px-8 lg:py-30 lg:pr-0">
 						<div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl">
-							
 							<h1 className="text-pretty text-5xl font-semibold tracking-tight text-gray-900 sm:text-5xl dark:text-white">
 								Costruiamo ponti tra{" "}
 								<span className="text-primary">Università</span>{" "}
@@ -84,6 +85,7 @@ function People() {
 					state ideate dal nostro gruppo di ricerca. <br />
 					Scopri di più sui membri:
 				</p>
+
 				<div className=" flex flex-1  items-center justify-start">
 					{professors.map((x) => (
 						<Person key={x.id} person={x} />

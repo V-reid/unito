@@ -22,7 +22,7 @@ export default function Ricerca() {
 			<div className="flex  pb-10">
 				<Link
 					to="progetti"
-					className="relative border-2 w-[50%] rounded-l-2xl overflow-hidden bg-center h-[40vh] bg-[url(https://www.roboticaeducativa.pe/wp-content/uploads/2017/07/definicion-de-robotica.jpg)] bg-cover text-white  border-gray-300  p-10 shadow-md hover:bg-gray-100 transition-all  flex items-center justify-center text-2xl font-semibold	"
+					className="relative border-2 w-[50%] rounded-l-2xl overflow-hidden bg-center h-[40vh] bg-[url(/progetti.jpg)] bg-cover text-white  border-gray-300  p-10 shadow-md hover:bg-gray-100 transition-all  flex items-center justify-center text-2xl font-semibold	"
 				>
 					<h3 className="z-10 text-4xl font-bold">Progetti</h3>
 					<div className="bg-black opacity-50 absolute w-full h-full hover:opacity-30 transition-all"></div>

@@ -1,8 +1,16 @@
 import React, { useState } from "react";
 import { Search } from "lucide-react";
 import { Input } from "~/ui/input";
+import { cn } from "~/utils";
 
-export default function SearchBar() {
+export default function SearchBar({
+	className,
+	type,
+	...props
+}: React.DetailedHTMLProps<
+	React.InputHTMLAttributes<HTMLInputElement>,
+	HTMLInputElement
+>) {
 	const [searchQuery, setSearchQuery] = useState("");
 	return (
 		<div className="relative   flex items-center">
@@ -16,7 +24,11 @@ export default function SearchBar() {
 				placeholder="Cerca..."
 				value={searchQuery}
 				onChange={(e) => setSearchQuery(e.target.value)}
-				className="pl-10 bg-white rounded-xl border-gray-300"
+				className={cn(
+					"pl-10 bg-white rounded-xl border-gray-300",
+					className ?? ""
+				)}
+				{...props}
 			/>
 		</div>
 	);

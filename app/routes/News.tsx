@@ -20,7 +20,7 @@ export default function News() {
 	const { title, tags, image_url, date, full_article_content } = notizia;
 	return (
 		<div className="p-10 relative flex flex-col gap-10 max-w-4xl mx-auto pt-10">
-			{/* <BackButton /> */}
+			<BackButton />
 			<div className="flex flex-col gap-3">
 				<SectionTitle>
 					{new Date(date).toLocaleDateString("it-IT")}
