@@ -1,9 +1,5 @@
-import React, { type JSX, type PropsWithChildren } from "react";
-import ComingSoon from "~/components/ComingSoon";
-import { Dot, ExternalLink } from "lucide-react";
-import { cn } from "~/utils";
-import { ExternalA } from "~/components/ExternalA";
-import { Title } from "~/components/Title";
+
+import { cn } from "~/utils"
 import PageIntro from "~/components/PageIntro";
 import { Link } from "react-router";
 import { baseUrl } from "~/lib/constant";
@@ -40,7 +36,7 @@ export default function PerLeScuole() {
 				<Link
 					to="attivita"
 					className={cn(
-						`relative border-2 max-w-[50%] rounded-r-2xl overflow-hidden   flex-1 h-[40vh]  bg-cover text-white  border-gray-300  p-10 shadow-md hover:bg-gray-100 transition-all  flex items-center justify-center text-2xl font-semibold	`
+						`relative border-2 max-w-[50%] rounded-r-2xl overflow-hidden flex-1 h-[40vh]  bg-cover text-white  border-gray-300  p-10 shadow-md hover:bg-gray-100 transition-all  flex items-center justify-center text-2xl font-semibold	`
 					)}
 					style={{
 						backgroundImage: "url(" + baseUrl + "/attivita.jpg)",

@@ -1,9 +1,5 @@
-import React, { type JSX, type PropsWithChildren } from "react";
-import ComingSoon from "~/components/ComingSoon";
-import { Dot, ExternalLink } from "lucide-react";
+
 import { cn } from "~/utils";
-import { ExternalA } from "~/components/ExternalA";
-import { Title } from "~/components/Title";
 import PageIntro from "~/components/PageIntro";
 import { Link } from "react-router";
 import { baseUrl } from "~/lib/constant";

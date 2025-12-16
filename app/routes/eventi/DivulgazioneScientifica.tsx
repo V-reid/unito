@@ -1,4 +1,4 @@
-import { ExternalLink } from "lucide-react";
+
 import React, { useState } from "react";
 import type { ModalType } from "~/components/Modal";
 import Modal from "~/components/Modal";
@@ -6,7 +6,6 @@ import ModalCard from "~/components/ModalCard";
 import PageIntro from "~/components/PageIntro";
 import { Title } from "~/components/Title";
 import { baseUrl } from "~/lib/constant";
-import { cn } from "~/utils";
 
 const items: {
 	[k: string]: {
