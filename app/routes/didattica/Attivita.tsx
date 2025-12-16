@@ -94,7 +94,7 @@ const items = {
 		items: [
 			{
 				title: "Wolly, il robot educativo del Dipartimento di Informatica",
-				img: "https://wolly.di.unito.it/images/bg_2.jpg",
+				img: "/wolly.jpg",
 				description: (
 					<div>
 						<em>Responsabile</em>:{" "}
@@ -145,7 +145,7 @@ const items = {
 		items: [
 			{
 				title: "EmpAI",
-				img: "https://static.wixstatic.com/media/5798e4_72cfaad35ff24132ba356f0e38ce31ca~mv2.jpg/v1/fill/w_950,h_599,al_c,q_85,enc_avif,quality_auto/5798e4_72cfaad35ff24132ba356f0e38ce31ca~mv2.jpg",
+				img: "/didatticaAI.avif",
 				description: (
 					<div>
 						<em>Responsabile</em>:{" "}
@@ -170,7 +170,7 @@ const items = {
 		items: [
 			{
 				title: "Social4School",
-				img: "https://www.social4school.net/children.5dcf2b375e26e034ff97.jpeg",
+				img: "/social4school.jpg",
 				description: (
 					<div>
 						<em>Responsabili</em>:
@@ -184,6 +184,7 @@ const items = {
 					</div>
 				),
 				alt: "bambini a scuola",
+				imgClassName: "object-top h-[350px]",
 				content:
 					"Social4School permette a alunne e alunni delle scuole primarie e secondarie di sperimentare dinamiche sociali tipiche di un social network attraverso una simulazione interattiva realistica. Lo scopo è sensibilizzare i bambini e i ragazzi all’importanza di un uso consapevole della rete mostrando come ogni singola azione, anche piccola, rischia di avere una diffusione inaspettata nel Web.",
 				linkText: "Scarica l'applicazione",

@@ -5,8 +5,9 @@ import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
 	plugins: [tailwindcss(), reactRouter(), tsconfigPaths()],
+	base: `/unito-deploy/`,
 	// server: { allowedHosts: ["94b286d5afb0.ngrok-free.app"] },
-	server: {
-		host: true,
-	},
+	// server: {
+	// 	host: true,
+	// },
 });

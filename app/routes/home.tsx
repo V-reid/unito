@@ -1,14 +1,11 @@
 import { logos, news, professors, type ProfType } from "~/lib/constant";
 import type { Route } from "./+types/home";
 import { cn } from "~/utils";
-import { use, useState } from "react";
-import { Link, useNavigate } from "react-router";
-import { ArrowLeft, ArrowRight, Mail, Phone, Plus, Send } from "lucide-react";
+import { useState } from "react";
+import { Link } from "react-router";
+import { ArrowLeft, ArrowRight, Send } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "~/ui/tooltip";
-import { Button } from "~/ui/button";
 import SectionTitle from "~/components/SectionTitle";
-import { Input } from "~/ui/input";
-import SearchBar from "~/components/SerachBar";
 
 export function meta({}: Route.MetaArgs) {
 	return [
@@ -24,7 +21,7 @@ export default function Home() {
 		<>
 			<Hero />
 
-			<News />
+			<NewsSection />
 
 			<People />
 
@@ -164,7 +161,7 @@ function Person({ person: x }: { person: ProfType }) {
 	);
 }
 
-function News() {
+function NewsSection() {
 	return (
 		<div className="py-10 px-20 flex flex-col gap-4">
 			<SectionTitle>Ultime Notizie</SectionTitle>

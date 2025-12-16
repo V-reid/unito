@@ -3,7 +3,6 @@ import { useNavigate, useParams } from "react-router";
 import { professors, type DidatticaType } from "~/lib/constant";
 import { ArrowLeft, ArrowRight, Mail, Phone } from "lucide-react";
 import BackButton from "~/components/BackButton";
-import { Card, CardTitle } from "~/ui/card";
 import { cn } from "~/utils";
 
 export default function Professor() {

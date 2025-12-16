@@ -3,6 +3,16 @@ import { news } from "~/lib/constant";
 import { SingleNews } from "./home";
 import BackButton from "~/components/BackButton";
 import SectionTitle from "~/components/SectionTitle";
+import type { Route } from "./+types/news";
+
+export function meta({}: Route.MetaArgs) {
+	return [
+		{
+			title: "News - Sotto-Sito del Dipartimento di Informatica - Sezione per le Scuole",
+		},
+		{ name: "description", content: "Terza missione unito" },
+	];
+}
 
 export default function News() {
 	const { id } = useParams();
@@ -23,8 +33,10 @@ export default function News() {
 			<BackButton />
 			<div className="flex flex-col gap-3">
 				<SectionTitle>
-					{new Date(date).toLocaleDateString("it-IT")}
-					<div className="text-xl font-bold">{notizia.title}</div>
+					<div className="font-medium text-base">
+						{new Date(date).toLocaleDateString("it-IT")}
+					</div>
+					<div className=" font-bold">{notizia.title}</div>
 				</SectionTitle>
 				<div className="flex gap-2 items-center flex-wrap">
 					{tags.map((tag: string) => (

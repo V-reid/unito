@@ -70,7 +70,9 @@ export default [
 
 		//contatti
 		route("contatti", "./routes/Contacts.tsx"),
-		...prefix("notizie", [route(":id", "./routes/news.tsx")]),
-		...prefix("professore", [route(":id", "./routes/professor.tsx")]),
+		route("news/:id", "./routes/News.tsx"),
+		route("professore/:id", "./routes/Professor.tsx"),
+		// ...prefix("notizie", [route(":id", "./routes/news.tsx")]),
+		// ...prefix("professore", [route(":id", "./routes/professor.tsx")]),
 	]),
 ] satisfies RouteConfig;
