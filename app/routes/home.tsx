@@ -6,6 +6,8 @@ import { Link } from "react-router";
 import { ArrowLeft, ArrowRight, Send } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "~/ui/tooltip";
 import SectionTitle from "~/components/SectionTitle";
+import { format } from "date-fns";
+import { it } from "date-fns/locale";
 
 export function meta({}: Route.MetaArgs) {
 	return [
@@ -230,7 +232,9 @@ export function SingleNews({
 					<div className="text-sm ">{news.summary}</div>
 				</div>
 				<div className="text-sm text-white">
-					{new Date(news.date).toLocaleDateString("it-IT")}
+					{format(new Date(news.date), "dd MMMM yyyy", {
+						locale: it,
+					})}
 				</div>
 			</div>
 		</Link>

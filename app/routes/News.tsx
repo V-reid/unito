@@ -4,6 +4,8 @@ import { SingleNews } from "./home";
 import BackButton from "~/components/BackButton";
 import SectionTitle from "~/components/SectionTitle";
 import type { Route } from "./+types/news";
+import { format } from "date-fns";
+import { it } from "date-fns/locale";
 
 export function meta({}: Route.MetaArgs) {
 	return [
@@ -34,7 +36,9 @@ export default function News() {
 			<div className="flex flex-col gap-3">
 				<SectionTitle>
 					<div className="font-medium text-base">
-						{new Date(date).toLocaleDateString("it-IT")}
+						{format(new Date(date), "dd MMMM yyyy", {
+							locale: it,
+						})}
 					</div>
 					<div className=" font-bold">{notizia.title}</div>
 				</SectionTitle>
