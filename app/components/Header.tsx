@@ -1,10 +1,9 @@
-import React, { useEffect, useState, type JSX } from "react";
+import { useState } from "react";
 import { Link, useLocation } from "react-router";
 import { cn } from "~/utils";
 import SearchBar from "./SerachBar";
-import { ChevronDown, User } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
-import { Button } from "~/ui/button";
 import { menuContent, type MenuLink, type LinkType } from "~/lib/constant";
 import Logo from "./Logo";
 import Breadcrumb from "./Breadcrumb";
@@ -20,10 +19,6 @@ export default function Header() {
 	const [activeMenu, setActiveMenu] = useState<MenuType>(null);
 	const [previousMenu, setPreviousMenu] = useState<MenuType>(null);
 	const location = useLocation();
-
-	useEffect(() => {
-		setActiveMenu(null);
-	}, [location.pathname]);
 
 	const menuOrder: MenuType[] = ["events", "orientation", "material"];
 
@@ -119,6 +114,7 @@ export default function Header() {
 										<Link
 											key={index + item.title}
 											to={item.to}
+											onClick={() => setActiveMenu(null)}
 											className={cn(
 												"after:bg-primary relative after:absolute  after:bottom-0  after:w-full  after:left-0 after:transition-all group p-4 rounded-lg hover:bg-slate-100  bg-slate-50 transition-colors",
 												"/" +

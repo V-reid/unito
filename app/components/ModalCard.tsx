@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import { ImageWithFallback } from "./ImageWithFallback";
 import type { ModalType } from "./Modal";
-import Modal from "./Modal";
+
 import { cn } from "~/utils";
-import { useNavigate, useSearchParams } from "react-router";
-import { DialogDemo } from "./Dialog2";
+import { useNavigate } from "react-router";
 
 export default function ModalCard({
 	setObj,

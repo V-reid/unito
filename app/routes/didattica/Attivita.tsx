@@ -1,6 +1,5 @@
-import React, { useEffect, useState, type JSX } from "react";
-import { useSearchParams } from "react-router";
-import ComingSoon from "~/components/ComingSoon";
+import { useState } from "react";
+
 import { ExternalA } from "~/components/ExternalA";
 import type { ModalType } from "~/components/Modal";
 import Modal from "~/components/Modal";
@@ -9,7 +8,6 @@ import PageIntro from "~/components/PageIntro";
 import ProfLinks from "~/components/ProfLinks";
 import { Title } from "~/components/Title";
 import { professors } from "~/lib/constant";
-import { Button } from "~/ui/button";
 
 const items = {
 	didattica_informatica: {
