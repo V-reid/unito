@@ -1,1 +1,0 @@
-import{a as o,j as t}from"./chunk-WWGJGFF6-BlNTfm6B.js";import{A as a}from"./arrow-left-DJ-ulKWs.js";function i(){const r=o();return t.jsx(a,{tabIndex:-1,onKeyDown:e=>{(e.key==" "||e.key=="Enter")&&r(-1)},onClick:()=>r(-1),className:"absolute rounded-full ring-1 ring-gray-300 cursor-pointer p-2 size-10 hover:bg-gray-100 -left-30"})}export{i as B};

@@ -1,1 +1,0 @@
-import{j as t}from"./chunk-WWGJGFF6-BlNTfm6B.js";function r(){return t.jsx("div",{className:"h-[80vh] w-full grid place-items-center",children:t.jsx("div",{className:"bg-gradient-to-r from-cyan-500 to-purple-600 text-transparent bg-clip-text text-6xl",children:"Coming Soon"})})}export{r as C};

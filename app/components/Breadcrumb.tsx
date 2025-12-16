@@ -1,18 +1,13 @@
-import { useLocation } from "react-router";
+import { Link, useLocation } from "react-router";
 import {
 	Breadcrumb as UiBreadcrumb,
 	BreadcrumbItem,
-	BreadcrumbLink,
 	BreadcrumbList,
-	BreadcrumbPage,
 	BreadcrumbSeparator,
 } from "../ui/breadcrumb";
 
-import React from "react";
 import {
 	menuContent,
-	news,
-	professors,
 	type LinkType,
 	type MenuLink,
 } from "~/lib/constant";
@@ -69,32 +64,36 @@ export default function Breadcrumb() {
 			<UiBreadcrumb>
 				<BreadcrumbList className="flex items-center">
 					<BreadcrumbItem>
-						<BreadcrumbLink
-							href="/"
+						<Link
+							to="/"
 							className="hover:after:border-b  after:transition-all after:absolute relative after:w-full after:h-full after:top-0 after:border-gray-700"
 						>
 							<Home className="size-5 text-gray-800" />
-						</BreadcrumbLink>
+						</Link>
 					</BreadcrumbItem>
-					<BreadcrumbSeparator />
-					<BreadcrumbItem>
-						<BreadcrumbLink
-							href={middle?.to}
-							className="hover:underline transition-all"
-						>
-							{middle?.title}
-						</BreadcrumbLink>
-					</BreadcrumbItem>
-					{level > 1 ? (
+					{middle ? (
 						<>
 							<BreadcrumbSeparator />
 							<BreadcrumbItem>
-								<BreadcrumbLink
-									href={last?.to}
+								<Link
+									to={middle?.to}
+									className="hover:underline transition-all"
+								>
+									{middle?.title}
+								</Link>
+							</BreadcrumbItem>
+						</>
+					) : null}
+					{level > 1 && last ? (
+						<>
+							<BreadcrumbSeparator />
+							<BreadcrumbItem>
+								<Link
+									to={last?.to}
 									className="hover:underline transition-all"
 								>
 									{last?.title}
-								</BreadcrumbLink>
+								</Link>
 							</BreadcrumbItem>
 						</>
 					) : null}

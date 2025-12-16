@@ -1,7 +1,6 @@
 import { ExternalLink } from "lucide-react";
-import React, { useState } from "react";
-import ComingSoon from "~/components/ComingSoon";
-import { DialogDemo } from "~/components/Dialog2";
+import { useState } from "react";
+
 import { ExternalA } from "~/components/ExternalA";
 import type { ModalType } from "~/components/Modal";
 import Modal from "~/components/Modal";
@@ -10,7 +9,6 @@ import PageIntro from "~/components/PageIntro";
 import ProfLinks from "~/components/ProfLinks";
 import { Title } from "~/components/Title";
 import { baseUrl, professors } from "~/lib/constant";
-import { Button } from "~/ui/button";
 import { cn } from "~/utils";
 
 const items: {

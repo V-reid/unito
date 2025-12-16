@@ -4,6 +4,7 @@ import ComingSoon from "~/components/ComingSoon";
 import { ExternalA } from "~/components/ExternalA";
 import PageIntro from "~/components/PageIntro";
 import { Title } from "~/components/Title";
+import { baseUrl } from "~/lib/constant";
 import { Button } from "~/ui/button";
 import {
 	Card,

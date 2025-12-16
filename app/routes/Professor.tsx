@@ -1,19 +1,24 @@
-import React, { useState } from "react";
-import { useNavigate, useParams } from "react-router";
+import { useState } from "react";
 import { professors, type DidatticaType } from "~/lib/constant";
-import { ArrowLeft, ArrowRight, Mail, Phone } from "lucide-react";
+import { ArrowRight, Home, Mail, Phone } from "lucide-react";
 import BackButton from "~/components/BackButton";
 import { cn } from "~/utils";
+import type { Route } from "./+types/Professor";
+import { Link } from "react-router";
 
-export default function Professor() {
-	const { id } = useParams();
-	const professor = professors.find((x) => x.id == id);
-	const navigate = useNavigate();
+export async function clientLoader({ params }: Route.LoaderArgs) {
+	const professor = professors.find((x) => x.id == params.id);
+	return professor;
+}
 
+export default function Professor({
+	loaderData: professor,
+}: Route.ComponentProps) {
 	if (professor == undefined || professor == null)
 		return (
-			<div className="grid place-items-center text-3xl font-bold w-full h-[80vh]">
-				<div>
+			<div className="  grid place-items-center text-3xl font-bold w-full h-[80vh]">
+				<div className="relative">
+					<BackButton to={"/"} />
 					<div className="text-6xl italic">404</div>
 					<div>Professore Inesistente</div>
 				</div>

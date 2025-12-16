@@ -1,29 +1,22 @@
-import { useParams } from "react-router";
 import { news } from "~/lib/constant";
 import { SingleNews } from "./home";
 import BackButton from "~/components/BackButton";
 import SectionTitle from "~/components/SectionTitle";
-import type { Route } from "./+types/news";
 import { format } from "date-fns";
 import { it } from "date-fns/locale";
+import type { Route } from "./+types/News";
 
-export function meta({}: Route.MetaArgs) {
-	return [
-		{
-			title: "News - Sotto-Sito del Dipartimento di Informatica - Sezione per le Scuole",
-		},
-		{ name: "description", content: "Terza missione unito" },
-	];
+export async function clientLoader({ params }: Route.LoaderArgs) {
+	const notizia = news.find((x) => x.id == params.id);
+	return notizia;
 }
 
-export default function News() {
-	const { id } = useParams();
-	const notizia = news.find((x) => x.id == id);
-
+export default function News({ loaderData: notizia }: Route.ComponentProps) {
 	if (notizia == undefined || notizia == null)
 		return (
 			<div className="grid place-items-center text-3xl font-bold w-full h-[80vh]">
-				<div>
+				<div className="relative">
+					<BackButton to={"/"} />
 					<div className="text-6xl italic">404</div>
 					<div>Notizia Inesistente</div>
 				</div>
@@ -45,7 +38,7 @@ export default function News() {
 				<div className="flex gap-2 items-center flex-wrap">
 					{tags.map((tag: string) => (
 						<div
-							key={tag + id + "single News"}
+							key={tag + notizia.id + "single News"}
 							className="rounded-full bg-primary-700  text-white w-fit px-2 py-0.5 text-xs font-bold grid"
 						>
 							{tag}
@@ -69,7 +62,7 @@ export default function News() {
 				<SectionTitle>Altre notizie</SectionTitle>
 				<div className="grid grid-cols-3 gap-4   mx-auto ">
 					{news
-						.filter((x) => x.id != id)
+						.filter((x) => x.id != notizia.id)
 						.map((x) => (
 							<SingleNews news={x} key={x.title + "_news"} />
 						))}

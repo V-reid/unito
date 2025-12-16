@@ -1,0 +1,1 @@
+import{j as s}from"./chunk-WWGJGFF6-BOXqX4X-.js";function l({title:e,children:t}){return s.jsxs("div",{className:"flex flex-col gap-2",children:[s.jsx("h2",{className:"text-4xl font-bold",children:e}),s.jsx("div",{children:t})]})}export{l as P};
