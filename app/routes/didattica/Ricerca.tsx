@@ -24,8 +24,14 @@ export default function Ricerca() {
 				<Link
 					to="progetti"
 					className={cn(
-						`relative border-2 w-[50%] rounded-l-2xl overflow-hidden bg-center h-[40vh] bg-[url(${baseUrl}/progetti.jpg)] bg-cover text-white  border-gray-300  p-10 shadow-md hover:bg-gray-100 transition-all  flex items-center justify-center text-2xl font-semibold	`
+						`relative border-2 w-[50%] rounded-l-2xl overflow-hidden bg-center h-[40vh]  bg-cover text-white  border-gray-300  p-10 shadow-md hover:bg-gray-100 transition-all  flex items-center justify-center text-2xl font-semibold	`
 					)}
+					style={{
+						backgroundImage:
+							"url(" +
+							baseUrl +
+							"/progetti.jpg)"
+					}}
 				>
 					<h3 className="z-10 text-4xl font-bold">Progetti</h3>
 					<div className="bg-black opacity-50 absolute w-full h-full hover:opacity-30 transition-all"></div>
@@ -33,8 +39,14 @@ export default function Ricerca() {
 				<Link
 					to="prodotti"
 					className={cn(
-						`relative border-2 max-w-[50%] rounded-r-2xl overflow-hidden   flex-1 h-[40vh]  bg-[url(${baseUrl}/progetti/prodotti-ricerca.jpeg)] bg-cover text-white  border-gray-300  p-10 shadow-md hover:bg-gray-100 transition-all  flex items-center justify-center text-2xl font-semibold	`
+						`relative border-2 max-w-[50%] rounded-r-2xl overflow-hidden   flex-1 h-[40vh]  bg-cover text-white  border-gray-300  p-10 shadow-md hover:bg-gray-100 transition-all  flex items-center justify-center text-2xl font-semibold	`
 					)}
+					style={{
+						backgroundImage:
+							"url(" +
+							baseUrl +
+							"/progetti/prodotti-ricerca.jpeg)",
+					}}
 				>
 					<h3 className="z-10 text-4xl font-bold text-center">
 						Pubblicazioni
