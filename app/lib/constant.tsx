@@ -124,28 +124,28 @@ export const menuContent: {
 export const logos = [
 	{
 		title: "Università di Torino",
-		src: "./logo_unito.svg",
+		src: baseUrl + "/logo_unito.svg",
 		alt: "logo unito",
 		href: "https://www.unito.it/",
 		classNames: "",
 	},
 	{
 		title: "Atlante delle Professioni",
-		src: "./atlante.png",
+		src: baseUrl + "/atlante.png",
 		alt: "logo Atlante delle professioni",
 		href: "https://atlantedelleprofessioni.it/",
 		classNames: "",
 	},
 	{
 		title: "Idem Garrai",
-		src: "./idem.png",
+		src: baseUrl + "/idem.png",
 		alt: "logo Idem Garrai",
 		href: "https://www.unito.it/servizi/servizi-online/unito-idem",
 		classNames: "",
 	},
 	{
 		title: "Easy Reading",
-		src: "./easyReading.png",
+		src: baseUrl + "/easyReading.png",
 		alt: "logo Easy Reading",
 		href: "https://www.easyreading.eu/",
 		classNames: "",

@@ -1,0 +1,1 @@
+import{j as e}from"./chunk-WWGJGFF6-BOXqX4X-.js";import{c as i}from"./utils-oBlX3nyX.js";import{E as t}from"./external-link-CSsaavyq.js";function x({href:n,children:r,className:s}){return e.jsxs("a",{className:i("underline text-blue-600 inline",s??""),href:n,children:[r,e.jsx(t,{className:" size-4 inline ml-[1px] mb-[2px]"})]})}export{x as E};

@@ -1,0 +1,1 @@
+import{j as o}from"./chunk-WWGJGFF6-BOXqX4X-.js";import{c as e}from"./utils-oBlX3nyX.js";function i({className:r,children:t}){return o.jsx("h3",{className:e("border-primary text-2xl w-fit  border-l-2 px-2 font-bold  mb-2",r??""),children:t})}export{i as T};

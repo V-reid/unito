@@ -50,7 +50,7 @@ const items = {
 			},
 			{
 				title: "Teachers4Teachers",
-				img: "/uni.png",
+				img: baseUrl + "/uni.png",
 				alt: "Teacher4Teacher",
 				description: (
 					<div>

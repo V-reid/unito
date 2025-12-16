@@ -35,7 +35,7 @@ const items: {
 			},
 			{
 				title: "La notte dei ricercatori e delle ricercatrici ",
-				img: "./divulgazione/notte.png",
+				img: baseUrl + "/divulgazione/notte.png",
 				alt: "La notte dei ricercatori e delle ricercatrici",
 				imgClassName: "h-[300px]",
 				content:
@@ -51,7 +51,7 @@ const items: {
 		items: [
 			{
 				title: "Frida",
-				img: "./divulgazione/frida.png",
+				img: baseUrl + "/divulgazione/frida.png",
 				alt: "locandina di frida",
 				content:
 					"Frida è il Forum di Ricerca d’Ateneo, un progetto dell’Università di Torino e del Centro Interuniversitario Agorà Scienza che racconta le attività di ricerca dell’Università in modo accessibile e interessante.",
