@@ -5,14 +5,12 @@ import { ExternalA } from "~/components/ExternalA";
 import type { ModalType } from "~/components/Modal";
 import ModalCard from "~/components/ModalCard";
 import PageIntro from "~/components/PageIntro";
-import { Title } from "~/components/Title";
-import { Card, CardContent, CardHeader, CardTitle } from "~/ui/card";
-import { cn } from "~/utils";
+import { baseUrl } from "~/lib/constant";
 
 const items: Omit<ModalType, "open" | "setIsOpen">[] = [
 	{
 		title: "CyberChallenge.IT",
-		img: "./cyberchallenge.webp",
+		img: baseUrl + "/cyberchallenge.webp",
 		alt: "cyberchallenge",
 		content:
 			"CyberChallenge.IT è un programma di formazione in ambito cybersecurity rivolto a ragazzi e ragazze dai 16 ai 24 anni, consistente di una gara sia individuale che a squadre, e preceduto da un corso organizzato dal Dipartimento.",
@@ -33,7 +31,7 @@ export default function DiFormazione() {
 			<div className="flex  pb-10">
 				<Link
 					to="cyberchallenge"
-					className="relative border-2 w-[50%] rounded-l-2xl overflow-hidden bg-center h-[40vh] bg-[url(/formazione/cyberchallenge.jpeg)] bg-cover text-white  border-gray-300  p-10 shadow-md hover:bg-gray-100 transition-all  flex items-center justify-center text-2xl font-semibold	"
+					className={`relative border-2 w-[50%] rounded-l-2xl overflow-hidden bg-center h-[40vh] bg-[url(${baseUrl}/formazione/cyberchallenge.jpeg)] bg-cover text-white  border-gray-300  p-10 shadow-md hover:bg-gray-100 transition-all  flex items-center justify-center text-2xl font-semibold	`}
 				>
 					<h3 className="z-10 text-4xl font-bold">
 						CyberChallenge.IT
@@ -42,7 +40,7 @@ export default function DiFormazione() {
 				</Link>
 				<Link
 					to="swerc"
-					className="relative border-2 max-w-[50%] rounded-r-2xl overflow-hidden   flex-1 h-[40vh]  bg-[url(/formazione/swerc.jpeg)] bg-cover bg-center text-white  border-gray-300  p-10 shadow-md hover:bg-gray-100 transition-all  flex items-center justify-center text-2xl font-semibold	"
+					className={`relative border-2 max-w-[50%] rounded-r-2xl overflow-hidden   flex-1 h-[40vh]  bg-[url(${baseUrl}/formazione/swerc.jpeg)] bg-cover bg-center text-white  border-gray-300  p-10 shadow-md hover:bg-gray-100 transition-all  flex items-center justify-center text-2xl font-semibold	`}
 				>
 					<h3 className="z-10 text-4xl font-bold">SWERC</h3>
 					<div className="bg-black opacity-50 absolute w-full h-full hover:opacity-30 transition-all"></div>

@@ -4,6 +4,7 @@ import ComingSoon from "~/components/ComingSoon";
 import { ExternalA } from "~/components/ExternalA";
 import PageIntro from "~/components/PageIntro";
 import { Title } from "~/components/Title";
+import { baseUrl } from "~/lib/constant";
 import { Button } from "~/ui/button";
 import {
 	Card,
@@ -33,7 +34,7 @@ export default function LaureaTriennale() {
 						software che hardware.
 					</div>
 					<img
-						src="/triennale.jpeg"
+						src={baseUrl + "/triennale.jpeg"}
 						alt="ragazzo che segue la lezione"
 						className="flex-1 min-w-[50%] rounded-xl border-[1px] border-gray-300"
 					/>

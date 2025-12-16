@@ -4,13 +4,14 @@ import PageIntro from "~/components/PageIntro";
 import { Title } from "~/components/Title";
 import { cn } from "~/utils";
 import { Card, CardContent, CardHeader, CardTitle } from "~/ui/card";
+import { baseUrl } from "~/lib/constant";
 
 export default function Cyberchallenge() {
 	return (
 		<div className="p-10 relative flex flex-col gap-10 max-w-4xl mx-auto pt-10">
 			<Section
 				title="CyberChallenge.IT"
-				src="/formazione/cyberchallenge.jpeg"
+				src={baseUrl + "/formazione/cyberchallenge.jpeg"}
 			>
 				<>
 					<div className="pb-3">

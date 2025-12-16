@@ -1,4 +1,10 @@
-import { logos, news, professors, type ProfType } from "~/lib/constant";
+import {
+	baseUrl,
+	logos,
+	news,
+	professors,
+	type ProfType,
+} from "~/lib/constant";
 import type { Route } from "./+types/home";
 import { cn } from "~/utils";
 import { useState } from "react";
@@ -66,7 +72,7 @@ function Hero() {
 			<div className="bg-gray-50 lg:absolute lg:inset-y-0 lg:right-0 lg:w-[52%] dark:bg-gray-800 ">
 				<img
 					alt=""
-					src="/uni.jpg"
+					src={baseUrl + "/uni.jpg"}
 					className=" object-cover   object-left size-[100%]"
 				/>
 			</div>

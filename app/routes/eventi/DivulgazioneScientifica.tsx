@@ -5,6 +5,7 @@ import Modal from "~/components/Modal";
 import ModalCard from "~/components/ModalCard";
 import PageIntro from "~/components/PageIntro";
 import { Title } from "~/components/Title";
+import { baseUrl } from "~/lib/constant";
 import { cn } from "~/utils";
 
 const items: {
@@ -18,7 +19,7 @@ const items: {
 		items: [
 			{
 				title: "Scienza Migrante",
-				img: "./divulgazione/scienza-migrante.jpg",
+				img: baseUrl + "/divulgazione/scienza-migrante.jpg",
 				alt: "Locandina Scienza migrante",
 				content:
 					"Scienza Migrante è un progetto dell’Università di Torino in collaborazione con altri enti, creato attorno a scienziati e ricercatori che lavorano all’estero e con un focus su temi culturali, linguistici e scientifici. Rientrano in questo progetto varie attività e piattaforme: il portale con le storie degli scienziati migranti, l’aperitivo migrante e il cineforum.",
@@ -27,7 +28,7 @@ const items: {
 			},
 			{
 				title: "Salone Internazionale del Libro",
-				img: "./divulgazione/salon.jpeg",
+				img: baseUrl + "/divulgazione/salon.jpeg",
 				alt: "Scaffale cilindrico di libri",
 				content:
 					"Lo spazio UniTo allo stand L139 del Padiglione 2 di Lingotto Fiere - ha ospitato gli #UniToTalks, un cartellone di incontri per dar voce alle diverse anime dell'Ateneo e presentare progetti e iniziative che coinvolgono in modo più ampio il territorio e le istituzioni su tematiche trasversali - dalla sostenibilità agli spazi urbani, dalla tutela della salute alle proposte culturali.",
@@ -60,7 +61,7 @@ const items: {
 			},
 			{
 				title: "#donneinformatiche",
-				img: "./divulgazione/donneinformatiche.jpeg",
+				img: baseUrl + "/divulgazione/donneinformatiche.jpeg",
 				alt: "suora che tiene vecchio computer in mano",
 				imgClassName: "object-top",
 				content:

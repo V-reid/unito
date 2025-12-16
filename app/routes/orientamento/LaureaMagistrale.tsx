@@ -28,7 +28,7 @@ export default function LaureaMagistrale() {
 						vocazione più decisa a ruoli manageriali e di ricerca.
 					</div>
 					<img
-						src="/magistrale.jpeg"
+						src={baseUrl + "/magistrale.jpeg"}
 						alt="ragazzi intorno ai 28 anni che seguono la lezione"
 						className="flex-1 min-w-[50%] rounded-xl border-[1px] border-gray-300"
 					/>

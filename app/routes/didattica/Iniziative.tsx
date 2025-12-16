@@ -5,6 +5,7 @@ import { cn } from "~/utils";
 import { ExternalA } from "~/components/ExternalA";
 import { Title } from "~/components/Title";
 import PageIntro from "~/components/PageIntro";
+import { baseUrl } from "~/lib/constant";
 
 export default function Iniziative() {
 	return (
@@ -31,7 +32,7 @@ export default function Iniziative() {
 
 			<Section
 				title="Bambini e bambine all’Università"
-				src="/perScuole/bambini.jpeg"
+				src={baseUrl + "/perScuole/bambini.jpeg"}
 			>
 				<>
 					<div className="pb-3">
@@ -63,7 +64,7 @@ export default function Iniziative() {
 
 			<Section
 				title="Progetto Lauree Scientifiche. Laboratori e attività"
-				src="/perScuole/lauree.jpeg"
+				src={baseUrl + "/perScuole/lauree.jpeg"}
 				classNameImg="object-top"
 			>
 				<>
@@ -109,7 +110,7 @@ export default function Iniziative() {
 
 			<Section
 				title="Alternanza Scuola-Lavoro"
-				src="/perScuole/alternanza.jpeg"
+				src={baseUrl + "/perScuole/alternanza.jpeg"}
 			>
 				<>
 					<div className="pb-2">

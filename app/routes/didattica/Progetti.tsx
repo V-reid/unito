@@ -9,7 +9,7 @@ import ModalCard from "~/components/ModalCard";
 import PageIntro from "~/components/PageIntro";
 import ProfLinks from "~/components/ProfLinks";
 import { Title } from "~/components/Title";
-import { professors } from "~/lib/constant";
+import { baseUrl, professors } from "~/lib/constant";
 import { Button } from "~/ui/button";
 import { cn } from "~/utils";
 
@@ -24,7 +24,7 @@ const items: {
 		items: [
 			{
 				title: "Convenzione Quercetti - Dipartimento di Informatica",
-				img: "/progetti/pallino1.jpeg",
+				img: baseUrl + "/progetti/pallino1.jpeg",
 				alt: "bambino che compone parole con blochhi di lettere",
 				description: (
 					<div>
@@ -67,7 +67,7 @@ const items: {
 		items: [
 			{
 				title: "Sugar, Salt & Pepper - La robotica umanoide per l’autismo",
-				img: "/progetti/pepper.jpeg",
+				img: baseUrl + "/progetti/pepper.jpeg",
 				description: (
 					<div>
 						<em>Responsabile</em>:{" "}
@@ -113,7 +113,7 @@ const items: {
 			},
 			{
 				title: "Social Assistive Robotics for Autistic Childrens",
-				img: "/progetti/neo.jpeg",
+				img: baseUrl + "/progetti/neo.jpeg",
 				description: (
 					<div>
 						<em>Responsabile</em>:{" "}
@@ -136,7 +136,7 @@ const items: {
 		items: [
 			{
 				title: "Convenzione tra il Comune di Torino e l’Università di Torino",
-				img: "/progetti/convenzione.jpeg",
+				img: baseUrl + "/progetti/convenzione.jpeg",
 				description: (
 					<div>
 						<em>Responsabile</em>:{" "}
@@ -153,7 +153,7 @@ const items: {
 			},
 			{
 				title: "Studio e Analisi di usabilità per il progetto ”RightTVforKids”",
-				img: "/progetti/tvForKids.jpeg",
+				img: baseUrl + "/progetti/tvForKids.jpeg",
 				description: (
 					<div>
 						<em>Responsabile</em>:{" "}
@@ -170,7 +170,7 @@ const items: {
 			},
 			{
 				title: "Pensiero Computazionale e Creatività Digitale",
-				img: "/progetti/computazionale.jpeg",
+				img: baseUrl + "/progetti/computazionale.jpeg",
 				description: (
 					<div>
 						<em>Responsabile</em>:{" "}
@@ -187,7 +187,7 @@ const items: {
 			},
 			{
 				title: "Passport.Unito",
-				img: "/progetti/passport.jpeg",
+				img: baseUrl + "/progetti/passport.jpeg",
 				description: (
 					<div>
 						<em>Responsabile</em>:{" "}
@@ -218,7 +218,7 @@ const items: {
 			},
 			{
 				title: "Collaborazione Banca d'Italia - Dipartimento di Informatica",
-				img: "/progetti/banca.jpeg",
+				img: baseUrl + "/progetti/banca.jpeg",
 				description: (
 					<div>
 						<em>Responsabile</em>:{" "}

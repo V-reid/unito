@@ -7,7 +7,7 @@ import ModalCard from "~/components/ModalCard";
 import PageIntro from "~/components/PageIntro";
 import ProfLinks from "~/components/ProfLinks";
 import { Title } from "~/components/Title";
-import { professors } from "~/lib/constant";
+import { baseUrl, professors } from "~/lib/constant";
 
 const items = {
 	didattica_informatica: {
@@ -15,7 +15,7 @@ const items = {
 		items: [
 			{
 				title: "Informaticasenzapc",
-				img: "/didattica.jpeg",
+				img: baseUrl + "/didattica.jpeg",
 				alt: "Informaticasenzapc",
 				description: (
 					<div>
@@ -92,7 +92,7 @@ const items = {
 		items: [
 			{
 				title: "Wolly, il robot educativo del Dipartimento di Informatica",
-				img: "/wolly.jpg",
+				img: baseUrl + "/wolly.jpg",
 				description: (
 					<div>
 						<em>Responsabile</em>:{" "}
@@ -143,7 +143,7 @@ const items = {
 		items: [
 			{
 				title: "EmpAI",
-				img: "/didatticaAI.avif",
+				img: baseUrl + "/didatticaAI.avif",
 				description: (
 					<div>
 						<em>Responsabile</em>:{" "}
@@ -168,7 +168,7 @@ const items = {
 		items: [
 			{
 				title: "Social4School",
-				img: "/social4school.jpg",
+				img: baseUrl + "/social4school.jpg",
 				description: (
 					<div>
 						<em>Responsabili</em>:
